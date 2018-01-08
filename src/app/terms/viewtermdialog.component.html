@@ -1,0 +1,52 @@
+<div class="modal-content">
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card card-nav-tabs">
+                            <div class="card-header" data-background-color="blue">
+                                <h4 class="title">Term Details</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form name="termForm" id="termForm">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" [(ngModel)]="name" name="name" id="name" #termName="ngModel" required readonly/>
+                                                <br>
+                                                <label>Status</label>
+                                                <input type="text" class="form-control" [(ngModel)]="status" name="status" id="status" #termStatus="ngModel" required readonly/>
+                                                <br>
+                                                <label>Type</label>
+                                                <input type="text" class="form-control" [(ngModel)]="type" name="type" id="type" #termType="ngModel" required readonly/>
+                                                <br>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label>From</label>
+                                                            <input type="text" value="{{from | date: 'MM/dd/yyyy'}}" id="FromDate" name="FromDate" class="form-control" required  readonly />
+                                                        </div>
+                                                        <div class="col-md-3 ">
+                                                            <label>To</label>
+                                                            <input type="text" value="{{to | date: 'MM/dd/yyyy'}}" id="ToDate" name="ToDate" class="form-control" required  readonly />
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div>
+                <button type="button" class="btn btn-default" (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
