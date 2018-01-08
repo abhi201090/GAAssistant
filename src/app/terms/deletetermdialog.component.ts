@@ -45,6 +45,7 @@ export class DeleteTermDialog extends DialogComponent<Term, boolean> implements 
     this.userService.deleteTerm(data).subscribe(()=>{
       this.loading = false;
     }, err=>{
+      this.loading = false;
       if(err.error === 'Unauthorized')
         location.replace('/login');
     });;

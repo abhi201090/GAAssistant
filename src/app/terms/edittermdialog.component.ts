@@ -54,6 +54,7 @@ export class EditTermDialog extends DialogComponent<Term, boolean> implements Te
     this.userService.updateTerm(data).subscribe(()=>{
       this.loading = false;
     }, err=>{
+      this.loading = false;
       if(err.error === 'Unauthorized')
         location.replace('/login');
     });;

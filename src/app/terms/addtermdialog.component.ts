@@ -56,6 +56,7 @@ export class AddTermDialogContent extends DialogComponent<Term, boolean> impleme
     this.userService.addTerm(data).subscribe(()=>{
       this.loading = false;
     }, err=>{
+      this.loading = false;
       if(err.error === 'Unauthorized')
         location.replace('/login');
     });

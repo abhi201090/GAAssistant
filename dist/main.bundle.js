@@ -1358,6 +1358,7 @@ var AddTermDialogContent = /** @class */ (function (_super) {
         this.userService.addTerm(data).subscribe(function () {
             _this.loading = false;
         }, function (err) {
+            _this.loading = false;
             if (err.error === 'Unauthorized')
                 location.replace('/login');
         });
@@ -1484,6 +1485,7 @@ var DeleteTermDialog = /** @class */ (function (_super) {
         this.userService.deleteTerm(data).subscribe(function () {
             _this.loading = false;
         }, function (err) {
+            _this.loading = false;
             if (err.error === 'Unauthorized')
                 location.replace('/login');
         });
@@ -1579,6 +1581,7 @@ var EditTermDialog = /** @class */ (function (_super) {
         this.userService.updateTerm(data).subscribe(function () {
             _this.loading = false;
         }, function (err) {
+            _this.loading = false;
             if (err.error === 'Unauthorized')
                 location.replace('/login');
         });
@@ -1696,6 +1699,7 @@ var ManageTerms = /** @class */ (function () {
             _this.datasource.data = res;
             _this.loading = false;
         }, function (err) {
+            _this.loading = false;
             if (err.error === 'Unauthorized') {
                 console.log(err.error);
             }
@@ -1717,6 +1721,7 @@ var ManageTerms = /** @class */ (function () {
                     _this.datasource.data = res;
                     _this.loading = false;
                 }, function (err) {
+                    _this.loading = false;
                     if (err.error === 'Unauthorized') {
                         console.log(err.error);
                     }
@@ -1738,6 +1743,7 @@ var ManageTerms = /** @class */ (function () {
                     _this.datasource.data = res;
                     _this.loading = false;
                 }, function (err) {
+                    _this.loading = false;
                     if (err.error === 'Unauthorized') {
                         console.log(err.error);
                     }
@@ -1770,6 +1776,7 @@ var ManageTerms = /** @class */ (function () {
                     _this.datasource.data = res;
                     _this.loading = false;
                 }, function (err) {
+                    _this.loading = false;
                     if (err.error === 'Unauthorized') {
                         console.log(err.error);
                     }

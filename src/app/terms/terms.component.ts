@@ -31,6 +31,7 @@ export class ManageTerms {
             this.datasource.data = res;
             this.loading = false;
         }, err => {
+            this.loading = false;
             if (err.error === 'Unauthorized') {
                 console.log(err.error);
             }
@@ -51,6 +52,7 @@ export class ManageTerms {
                         this.datasource.data = res;
                         this.loading = false;
                     }, err => {
+                        this.loading = false;
                         if (err.error === 'Unauthorized') {
                             console.log(err.error);
                         }
@@ -72,6 +74,7 @@ export class ManageTerms {
                         this.datasource.data = res;
                         this.loading = false;
                     }, err => {
+                        this.loading = false;
                         if (err.error === 'Unauthorized') {
                             console.log(err.error);
                         }
@@ -104,6 +107,7 @@ export class ManageTerms {
                         this.datasource.data = res;
                         this.loading = false;
                     }, err => {
+                        this.loading = false;
                         if (err.error === 'Unauthorized') {
                             console.log(err.error);
                         }
