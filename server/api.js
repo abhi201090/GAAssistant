@@ -6,7 +6,7 @@ var CASAuthentication = require('cas-authentication');
 var Term = require('../models/terms');
 
 var cas = new CASAuthentication({
-    cas_url     : 'https://localhost/cas',
+    cas_url     : 'https://75.143.55.183/cas',
     service_url : 'http://localhost:3000',
     cas_version: "2.0",
     session_info: "user_info"
