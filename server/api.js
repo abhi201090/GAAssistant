@@ -4,6 +4,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var CASAuthentication = require('cas-authentication');
 var Term = require('../models/terms');
+var User = require('../models/user');
 
 var cas = new CASAuthentication({
     cas_url     : 'https://75.143.55.183/cas',
@@ -19,8 +20,11 @@ router.get('/test',cas.block, (req,res) => {
 });
 
 router.get('/login',cas.bounce,(req,res)=>{
+    User.FindorCreate(req.session.user_info);
     res.redirect('/');
 });
+
+router.get('/logout',cas.logout);
 
 router.get('/userDetails',cas.block,(req,res)=>{
     res.json(req.session.user_info);
@@ -80,6 +84,6 @@ router.get('/getTerms', cas.block, (req,res)=>{
         }
     }).sort({created_at:-1});
 });
-router.get('/logout',cas.logout);
+
 
 module.exports = router;
