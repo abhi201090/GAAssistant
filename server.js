@@ -27,11 +27,12 @@ app.get('/*',function(req,res){
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-var port = process.env.PORT || '3000';
-
+//var port = process.env.PORT || '3000';
+var port = process.env.OPENSHIFT_NODEJS_PORT || '3000';
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 app.set('port', port);
 
 var server = http.createServer(app);
-server.listen(port, ()=> console.log("Server is running"));
+server.listen(port, server_ip_address, ()=> console.log("Server is running"));
 
 
