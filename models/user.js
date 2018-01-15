@@ -19,7 +19,7 @@ var userSchema = new Schema({
         console.log(user);
         if(err)
             console.log(err);
-        else if(user || user === [] || user.length === 0){
+        else if(!user || user === [] || user.length === 0){
             var Object_ID = new ObjId;
             var nuser = {
                 _id : new ObjId,

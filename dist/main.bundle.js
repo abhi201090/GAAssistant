@@ -859,20 +859,22 @@ var SidebarComponent = /** @class */ (function () {
         this.userService = userService;
     }
     SidebarComponent.prototype.ngOnInit = function () {
-        var role = '';
+        var _this = this;
+        console.log('sidebar');
         this.userService.getUserDetails().subscribe(function (res) {
-            console.log(res.commonname);
+            _this.userInfo = res;
+            if (_this.userInfo.commonname === 'GAAdmin') {
+                console.log('here');
+                _this.menuItems = ROUTES.filter(function (menuItem) { return menuItem.role === 'admin'; });
+                console.log(_this.menuItems);
+            }
+            else
+                _this.menuItems = ROUTES.filter(function (menuItem) { return menuItem; });
         }, function (err) {
             if (err.error === 'Unauthorized') {
                 location.replace('/login');
             }
         });
-        if (role === 'GAAdmin') {
-            console.log('here');
-            this.menuItems = ROUTES.filter(function (menuItem) { return menuItem.role == 'admin'; });
-        }
-        else
-            this.menuItems = ROUTES.filter(function (menuItem) { return menuItem; });
     };
     SidebarComponent.prototype.isMobileMenu = function () {
         if ($(window).width() > 991) {

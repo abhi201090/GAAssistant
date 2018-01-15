@@ -27,6 +27,7 @@ import { UserService } from './servcies/user.service';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { DialogContent } from './components/datatable/dialog.component';
 import { ManageTerms } from './terms/terms.component';
+import { FacultyJobs } from './faculty/job/job.component';
 import { AddTermDialogContent } from './terms/addtermdialog.component';
 import { ViewTermDialog } from './terms/viewtermdialog.component';
 import { EditTermDialog } from './terms/edittermdialog.component';
@@ -50,7 +51,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     AddTermDialogContent,
     ViewTermDialog,
     EditTermDialog,
-    DeleteTermDialog
+    DeleteTermDialog,
+    FacultyJobs
   ],
   imports: [
     BrowserModule,

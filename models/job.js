@@ -23,6 +23,10 @@ var jobSchema = new Schema({
         _id: Schema.Types.ObjectId,
         ref:'terms'
     },
+    user:{
+        _id: Schema.Types.ObjectId,
+        ref:'users'
+    },
     created_at: Date,
     updated_at: Date
 });

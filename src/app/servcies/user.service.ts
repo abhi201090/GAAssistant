@@ -14,8 +14,8 @@ export class UserService {
   private serviceURL = "http://localhost:3000/";
   constructor(private http: HttpClient) { }
 
-  getUserDetails(): Observable<any> {
-    return this.http.get('/userDetails');
+  getUserDetails(): Observable<UserInfo> {
+    return this.http.get<UserInfo>('/userDetails');
   }
 
   addTerm(data): Observable<any> {

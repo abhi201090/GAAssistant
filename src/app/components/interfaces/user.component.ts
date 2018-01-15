@@ -1,4 +1,5 @@
 export interface UserInfo {
+    _id: string;
     commonname: string;
     uid: string;
     surname: string;
