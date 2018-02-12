@@ -8,6 +8,7 @@ import { DeleteTermDialog } from './deletetermdialog.component';
 import { DialogService } from 'ng2-bootstrap-modal';
 import { UserService } from '../servcies/user.service';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../servcies/auth.service';
 
 @Component({
     selector: 'terms',
@@ -25,16 +26,15 @@ export class ManageTerms {
     displayedColumns = ['name', 'status', 'from', 'to', 'type', 'action'];
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
-    constructor(private userService: UserService, private dialogService: DialogService) {
+    constructor(private userService: UserService, private dialogService: DialogService, private authService:AuthService) {
         this.loading = true;
         this.userService.getTerms().subscribe(res => {
             this.datasource.data = res;
             this.loading = false;
         }, err => {
+            this.authService.reset();
             this.loading = false;
-            if (err.error === 'Unauthorized') {
-                console.log(err.error);
-            }
+           
         });
     }
     applyFilter(filterValue: string) {

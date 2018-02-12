@@ -29,14 +29,11 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         
         this.authService.isLoggedIn.subscribe((val:boolean)=>{
-            
             if(val)
                 this.loggedIn = true;
-        
+            else
+                this.loggedIn = false;
         });
-        //let flag: boolean = false;
-        
-        //$.material.init();
         const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
         const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 

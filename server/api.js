@@ -71,13 +71,19 @@ router.post('/deleteterm', (req,res)=>{
     })
 });
 router.get('/getTerms', (req,res)=>{
-    Term.find({}, function(err,terms){
-        if(err)
-            console.log(err);
-        else{
-            res.json(terms);
-        }
-    }).sort({created_at:-1});
+    if(!req.user){
+        res.status(500).send({error:"Unauthorized"});
+    }
+    else{
+        Term.find({}, function(err,terms){
+            if(err)
+                console.log(err);
+            else{
+                res.json(terms);
+            }
+        }).sort({created_at:-1});
+    }
+    
 });
 
 

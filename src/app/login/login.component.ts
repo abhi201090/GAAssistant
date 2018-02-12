@@ -20,7 +20,8 @@ export class LoginComponent{
             this.router.navigate(['/']);
         }, err =>{
             if(err.error === 'Unauthorized'){
-                this.persistentService.removeAll();
+                this.authService.reset();
+                //this.persistentService.removeAll();
             }
         });
     }

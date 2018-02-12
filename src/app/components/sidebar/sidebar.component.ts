@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { UserInfo } from 'app/components/interfaces/user.component';
 import { AuthService } from '../../servcies/auth.service';
 import { Router } from '@angular/router';
+import { PersistenceService, StorageType } from 'angular-persistence';
+
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -30,28 +32,18 @@ export class SidebarComponent implements OnInit {
     menuItems: any[];
     userInfo: UserInfo;
     isLoggedIn$: Observable<boolean>;
-    constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
+    constructor(private userService: UserService, private authService: AuthService, private router: Router, private persistenceService:PersistenceService) { }
 
     ngOnInit() {
-        this.isLoggedIn$ = this.authService.isLoggedIn;
-        console.log("Sidebar");
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
-        //this.isLoggedIn$ = this.userService.getIsLoggedIn();
-        /*
-        this.userService.getUserDetails().subscribe(res=>{
-            this.userInfo = res;
-            if(this.userInfo.commonname === 'GAAdmin'){
-                console.log('here');
-                this.menuItems = ROUTES.filter(menuItem => menuItem.role === 'admin');
-                console.log(this.menuItems);
+        this.authService.isLoggedIn.subscribe((val:boolean)=>{
+            console.log(val);
+            if(val){
+                let role = this.persistenceService.get('role', StorageType.SESSION);
+                console.log(role);
+                this.menuItems = ROUTES.filter(menuItem => menuItem.role === role);
             }
-            else
-                this.menuItems = ROUTES.filter(menuItem => menuItem);
-        }, err=>{
-            if(err.error === 'Unauthorized'){
-                location.replace('/login');
-            }   
-        });*/
+        });
+        //this.menuItems = ROUTES.filter(menuItem => menuItem);
 
     }
     isMobileMenu() {

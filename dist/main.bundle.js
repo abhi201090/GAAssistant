@@ -86,9 +86,9 @@ var AppComponent = /** @class */ (function () {
         this.authService.isLoggedIn.subscribe(function (val) {
             if (val)
                 _this.loggedIn = true;
+            else
+                _this.loggedIn = false;
         });
-        //let flag: boolean = false;
-        //$.material.init();
         var elemMainPanel = document.querySelector('.main-panel');
         var elemSidebar = document.querySelector('.sidebar .sidebar-wrapper');
         this.location.subscribe(function (ev) {
@@ -918,6 +918,7 @@ module.exports = "<div class=\"logo\" >\n    <a href=\"https://www.creative-tim.
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular_persistence__ = __webpack_require__("../../../../angular-persistence/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -931,6 +932,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ROUTES = [
     { path: 'dashboard', title: 'Dashboard', icon: 'dashboard', class: '', role: 'admin' },
     { path: 'user-login', title: 'Login', icon: 'dashboard', class: '', role: 'admin' },
@@ -940,31 +942,23 @@ var ROUTES = [
     { path: 'table-list', title: 'Manage Terms2', icon: 'watch_later', class: '', role: 'student' }
 ];
 var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent(userService, authService, router) {
+    function SidebarComponent(userService, authService, router, persistenceService) {
         this.userService = userService;
         this.authService = authService;
         this.router = router;
+        this.persistenceService = persistenceService;
     }
     SidebarComponent.prototype.ngOnInit = function () {
-        this.isLoggedIn$ = this.authService.isLoggedIn;
-        console.log("Sidebar");
-        this.menuItems = ROUTES.filter(function (menuItem) { return menuItem; });
-        //this.isLoggedIn$ = this.userService.getIsLoggedIn();
-        /*
-        this.userService.getUserDetails().subscribe(res=>{
-            this.userInfo = res;
-            if(this.userInfo.commonname === 'GAAdmin'){
-                console.log('here');
-                this.menuItems = ROUTES.filter(menuItem => menuItem.role === 'admin');
-                console.log(this.menuItems);
+        var _this = this;
+        this.authService.isLoggedIn.subscribe(function (val) {
+            console.log(val);
+            if (val) {
+                var role_1 = _this.persistenceService.get('role', __WEBPACK_IMPORTED_MODULE_4_angular_persistence__["c" /* StorageType */].SESSION);
+                console.log(role_1);
+                _this.menuItems = ROUTES.filter(function (menuItem) { return menuItem.role === role_1; });
             }
-            else
-                this.menuItems = ROUTES.filter(menuItem => menuItem);
-        }, err=>{
-            if(err.error === 'Unauthorized'){
-                location.replace('/login');
-            }
-        });*/
+        });
+        //this.menuItems = ROUTES.filter(menuItem => menuItem);
     };
     SidebarComponent.prototype.isMobileMenu = function () {
         if ($(window).width() > 991) {
@@ -983,7 +977,7 @@ var SidebarComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/components/sidebar/sidebar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/sidebar/sidebar.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__servcies_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2__servcies_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */], __WEBPACK_IMPORTED_MODULE_4_angular_persistence__["b" /* PersistenceService */]])
     ], SidebarComponent);
     return SidebarComponent;
 }());
@@ -1251,7 +1245,8 @@ var LoginComponent = /** @class */ (function () {
             _this.router.navigate(['/']);
         }, function (err) {
             if (err.error === 'Unauthorized') {
-                _this.persistentService.removeAll();
+                _this.authService.reset();
+                //this.persistentService.removeAll();
             }
         });
     }
@@ -1458,14 +1453,14 @@ var AuthService = /** @class */ (function () {
     });
     AuthService.prototype.login = function (data) {
         var _this = this;
-        console.log(data);
         this.http.post('/login', data, { responseType: 'text' }).subscribe(function (res) {
-            _this.loggedIn.next(true);
-            //localStorage.setItem('auth','true');
-            _this.persistentService.set('login', true, { type: __WEBPACK_IMPORTED_MODULE_4_angular_persistence__["c" /* StorageType */].SESSION });
-            _this.router.navigate(['/']);
+            _this.getUserDetails().subscribe(function (val) {
+                _this.persistentService.set('role', val.role, { type: __WEBPACK_IMPORTED_MODULE_4_angular_persistence__["c" /* StorageType */].SESSION });
+                _this.loggedIn.next(true);
+                _this.persistentService.set('login', true, { type: __WEBPACK_IMPORTED_MODULE_4_angular_persistence__["c" /* StorageType */].SESSION });
+                _this.router.navigate(['/']);
+            });
         }, function (err) {
-            console.log(err);
         });
     };
     AuthService.prototype.getUserDetails = function () {
@@ -1473,8 +1468,11 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.logout = function () {
         this.loggedIn.next(false);
-        localStorage.removeItem('auth');
-        //localStorage.setItem('auth','true');
+        this.router.navigate(['/user-login']);
+    };
+    AuthService.prototype.reset = function () {
+        this.persistentService.removeAll(__WEBPACK_IMPORTED_MODULE_4_angular_persistence__["c" /* StorageType */].SESSION);
+        this.loggedIn.next(false);
         this.router.navigate(['/user-login']);
     };
     AuthService = __decorate([
@@ -2018,6 +2016,7 @@ module.exports = "<div class=\"main-content\">\r\n        <ngx-loading [show]=\"
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_bootstrap_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2035,11 +2034,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ManageTerms = /** @class */ (function () {
-    function ManageTerms(userService, dialogService) {
+    function ManageTerms(userService, dialogService, authService) {
         var _this = this;
         this.userService = userService;
         this.dialogService = dialogService;
+        this.authService = authService;
         this.loading = false;
         this.datasource = new __WEBPACK_IMPORTED_MODULE_1__angular_material__["e" /* MatTableDataSource */]([]);
         this.displayedColumns = ['name', 'status', 'from', 'to', 'type', 'action'];
@@ -2048,10 +2049,8 @@ var ManageTerms = /** @class */ (function () {
             _this.datasource.data = res;
             _this.loading = false;
         }, function (err) {
+            _this.authService.reset();
             _this.loading = false;
-            if (err.error === 'Unauthorized') {
-                console.log(err.error);
-            }
         });
     }
     ManageTerms.prototype.applyFilter = function (filterValue) {
@@ -2158,7 +2157,7 @@ var ManageTerms = /** @class */ (function () {
                 'class': 'new-mat-paginator'
             }
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_6_ng2_bootstrap_modal__["DialogService"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_6_ng2_bootstrap_modal__["DialogService"], __WEBPACK_IMPORTED_MODULE_8__servcies_auth_service__["a" /* AuthService */]])
     ], ManageTerms);
     return ManageTerms;
 }());

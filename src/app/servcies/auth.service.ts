@@ -27,14 +27,15 @@ export class AuthService {
 
 
   login(data) {
-    console.log(data);
     this.http.post('/login', data, { responseType: 'text' }).subscribe(res => {
-      this.loggedIn.next(true);
-      //localStorage.setItem('auth','true');
-      this.persistentService.set('login', true, { type: StorageType.SESSION });
-      this.router.navigate(['/']);
+      this.getUserDetails().subscribe(val => {
+        this.persistentService.set('role', val.role, { type: StorageType.SESSION });
+        this.loggedIn.next(true);
+        this.persistentService.set('login', true, { type: StorageType.SESSION });
+        this.router.navigate(['/']);
+      });
     }, err => {
-      console.log(err);
+
     });
   }
 
@@ -44,8 +45,12 @@ export class AuthService {
 
   logout() {
     this.loggedIn.next(false);
-    localStorage.removeItem('auth');
-    //localStorage.setItem('auth','true');
+    this.router.navigate(['/user-login']);
+  }
+
+  reset() {
+    this.persistentService.removeAll(StorageType.SESSION);
+    this.loggedIn.next(false);
     this.router.navigate(['/user-login']);
   }
 }
