@@ -2,35 +2,30 @@ var mongoose = require('mongoose');
 var objId = mongoose.Types.ObjectId;
 var express = require('express');
 var bodyParser = require('body-parser');
-var CASAuthentication = require('cas-authentication');
+var passport = require('passport');
 var Term = require('../models/terms');
 var User = require('../models/user');
 
-var cas = new CASAuthentication({
-    cas_url     : 'https://75.143.55.183/cas',
-    service_url : 'http://localhost:3000',
-    cas_version: "2.0",
-    session_info: "user_info"
-});
-
 var router = express.Router();
 
-router.get('/test',cas.block, (req,res) => {
+router.get('/test', (req,res) => {
     res.json('success');
 });
 
-router.get('/login',cas.bounce,(req,res)=>{
-    User.FindorCreate(req.session.user_info);
+router.post('/login',passport.authenticate('local'),(req,res)=>{;
     res.redirect('/');
 });
 
-router.get('/logout',cas.logout);
+router.get('/logout');
 
-router.get('/userDetails',cas.block,(req,res)=>{
-    res.json(req.session.user_info);
+router.get('/userDetails',(req,res)=>{
+    if(!req.user){
+        res.status(500).send({error:"Unauthorized"});
+        }
+    res.json(req.user);
 });
 
-router.post('/addterm', cas.block, (req,res)=>{
+router.post('/addterm', (req,res)=>{
     req.body._id = new objId;
     var newTerm = Term(req.body);
     newTerm.save(function(err){
@@ -41,7 +36,7 @@ router.post('/addterm', cas.block, (req,res)=>{
         }
     });
 });
-router.post('/updateterm', cas.block, (req,res)=>{
+router.post('/updateterm', (req,res)=>{
     Term.findById(req.body._id, function(err,term){
         if(err)
             console.log(err);
@@ -61,7 +56,7 @@ router.post('/updateterm', cas.block, (req,res)=>{
         }
     });
 });
-router.post('/deleteterm', cas.block, (req,res)=>{
+router.post('/deleteterm', (req,res)=>{
     Term.findById(req.body._id, function(err, term){
         if(err)
             console.log(err);
@@ -75,7 +70,7 @@ router.post('/deleteterm', cas.block, (req,res)=>{
         }
     })
 });
-router.get('/getTerms', cas.block, (req,res)=>{
+router.get('/getTerms', (req,res)=>{
     Term.find({}, function(err,terms){
         if(err)
             console.log(err);

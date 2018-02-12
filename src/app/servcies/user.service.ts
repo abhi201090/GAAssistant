@@ -6,12 +6,15 @@ import { Observable } from 'rxjs/Observable';
 import { window } from 'rxjs/operator/window';
 import { UserInfo } from '../components/interfaces/user.component';
 import { Term } from '../components/interfaces/term.component';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 @Injectable()
 export class UserService {
 
   private serviceURL = "http://localhost:3000/";
+  private loggedIn = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient) { }
 
   getUserDetails(): Observable<UserInfo> {
@@ -32,5 +35,15 @@ export class UserService {
 
   getTerms(): Observable<Term[]> {
     return this.http.get<Term[]>('/getTerms');
+  }
+
+  /*
+  getUserLogin(): Observable<Boolean>{
+
+  }*/
+
+  getIsLoggedIn(): Observable<boolean>{
+    console.log('service');
+    return this.loggedIn.asObservable();
   }
 }

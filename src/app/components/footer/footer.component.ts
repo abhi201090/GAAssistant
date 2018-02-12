@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../servcies/auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   test : Date = new Date();
-  
-  constructor() { }
+  isLoggedIn$: Observable<boolean>; 
+  constructor(private authService:AuthService) { }
 
   ngOnInit() {
+    this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 
 }

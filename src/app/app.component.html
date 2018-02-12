@@ -1,13 +1,13 @@
 <div class="wrapper">
-    <div class="sidebar" data-color='maroon' data-image="">
+    <div class="sidebar" data-color='maroon' data-image="" [style.visibility]="loggedIn?'visible':'hidden'">
         <app-sidebar></app-sidebar>
         <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
     </div>
     <div class="main-panel">
-        <app-navbar></app-navbar>
+        <app-navbar [style.visibility]="loggedIn?'visible':'hidden'"></app-navbar>
         <router-outlet></router-outlet>
-        <div *ngIf="isMaps('maps')">
-            <app-footer></app-footer>
+        <div [style.visibility]="loggedIn?'visible':'hidden'">
+            <app-footer ></app-footer>
         </div>
     </div>
 </div>

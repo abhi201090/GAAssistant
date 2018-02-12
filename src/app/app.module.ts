@@ -6,10 +6,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { LoadingModule } from 'ngx-loading';
 
-import { AppRoutingModule } from './app.routing';
+import { AppRoutingModule, AuthGuard } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
+import { PersistenceModule } from 'angular-persistence';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -24,6 +25,7 @@ import { DataTableComponent } from './components/datatable/datatable.component';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './servcies/user.service';
+import { AuthService } from './servcies/auth.service';
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { DialogContent } from './components/datatable/dialog.component';
 import { ManageTerms } from './terms/terms.component';
@@ -32,6 +34,7 @@ import { AddTermDialogContent } from './terms/addtermdialog.component';
 import { ViewTermDialog } from './terms/viewtermdialog.component';
 import { EditTermDialog } from './terms/edittermdialog.component';
 import { DeleteTermDialog } from './terms/deletetermdialog.component';
+import { LoginComponent } from './login/login.component';
 import { NgDatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
@@ -52,7 +55,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     ViewTermDialog,
     EditTermDialog,
     DeleteTermDialog,
-    FacultyJobs
+    FacultyJobs,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -68,10 +72,12 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     MatSortModule,
     BootstrapModalModule,
     NgDatepickerModule,
-    LoadingModule
+    LoadingModule,
+    PersistenceModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [DialogContent, AddTermDialogContent, ViewTermDialog, EditTermDialog, DeleteTermDialog]
 })
-export class AppModule { }
+export class AppModule { 
+}

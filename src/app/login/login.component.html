@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card card-nav-tabs" style="margin:25%; margin-top:10%; float:none; margin-bottom: 10px; width:500px;">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">Login</h4>
+                    </div>
+                    <div class="card-content">
+                        <form name="loginForm" id="loginForm" #loginForm="ngForm">
+                            <div class="form-group">
+                                <label>
+                                    Username
+                                </label>
+                                <input type="text" class="form-control" [(ngModel)]="username" name="username" id="username" #loginName="ngModel" required/>
+                                <div *ngIf="loginName.invalid && (loginName.dirty || loginName.touched)" style="color:red;">
+                                    <div *ngIf="loginName.errors.required">
+                                        Username is required.
+                                    </div>
+                                </div>
+                                <br>
+                                <label>
+                                    Password
+                                </label>
+                                <input type="password" class="form-control" [(ngModel)]="password" name="password" id="password" #loginPassword="ngModel" required/>
+                                <div *ngIf="loginPassword.invalid && (loginPassword.dirty || loginPassword.touched)" style="color:red;">
+                                    <div *ngIf="loginPassword.errors.required">
+                                        Password is required.
+                                    </div>
+                                </div>
+                                <br>
+                                <input type="submit" value="Login" class="btn btn-success pull-right" [disabled]="!loginForm.form.valid" (click)="login()"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

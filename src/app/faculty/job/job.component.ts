@@ -7,8 +7,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'terms',
-    templateUrl: './terms.component.html',
-    styleUrls: ['./terms.component.css'],
+    templateUrl: './job.component.html',
+    styleUrls: ['./job.component.css'],
     encapsulation: ViewEncapsulation.None,
     host: {
         'class': 'new-mat-paginator'
