@@ -4,9 +4,10 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { DialogService } from 'ng2-bootstrap-modal';
 import { UserService } from '../../servcies/user.service';
 import { FormsModule } from '@angular/forms';
+import { AddJobDialogContent } from './addjobdialog.component';
 
 @Component({
-    selector: 'terms',
+    selector: 'jobs',
     templateUrl: './job.component.html',
     styleUrls: ['./job.component.css'],
     encapsulation: ViewEncapsulation.None,
@@ -23,7 +24,18 @@ export class FacultyJobs {
 
         
     }
-
+    opendialog(){
+        let disposable = this.dialogService.addDialog(AddJobDialogContent, {})
+            .subscribe((isConfirmed) => {
+                //We get dialog result
+                if (isConfirmed) {
+                    
+                }
+                else {
+                    
+                }
+            });
+    }
     ngAfterViewInit() {
 
     }

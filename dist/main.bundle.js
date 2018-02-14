@@ -202,15 +202,17 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__ = __webpack_require__("../../../../../src/app/terms/viewtermdialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__ = __webpack_require__("../../../../../src/app/terms/edittermdialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__ = __webpack_require__("../../../../../src/app/terms/deletetermdialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_datepicker__ = __webpack_require__("../../../../ng2-datepicker/bundles/ng2-datepicker.umd.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33_ng2_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_33_ng2_datepicker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/addjobdialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_datepicker__ = __webpack_require__("../../../../ng2-datepicker/bundles/ng2-datepicker.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34_ng2_datepicker__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -264,11 +266,12 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_25__components_datatable_dialog_component__["a" /* DialogContent */],
                 __WEBPACK_IMPORTED_MODULE_26__terms_terms_component__["a" /* ManageTerms */],
                 __WEBPACK_IMPORTED_MODULE_28__terms_addtermdialog_component__["a" /* AddTermDialogContent */],
+                __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__["a" /* AddJobDialogContent */],
                 __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__["a" /* ViewTermDialog */],
                 __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__["a" /* EditTermDialog */],
                 __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__["a" /* DeleteTermDialog */],
                 __WEBPACK_IMPORTED_MODULE_27__faculty_job_job_component__["a" /* FacultyJobs */],
-                __WEBPACK_IMPORTED_MODULE_32__login_login_component__["a" /* LoginComponent */]
+                __WEBPACK_IMPORTED_MODULE_33__login_login_component__["a" /* LoginComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -283,13 +286,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_20__angular_material__["d" /* MatSortModule */],
                 __WEBPACK_IMPORTED_MODULE_24_ng2_bootstrap_modal__["BootstrapModalModule"],
-                __WEBPACK_IMPORTED_MODULE_33_ng2_datepicker__["NgDatepickerModule"],
+                __WEBPACK_IMPORTED_MODULE_34_ng2_datepicker__["NgDatepickerModule"],
                 __WEBPACK_IMPORTED_MODULE_6_ngx_loading__["a" /* LoadingModule */],
                 __WEBPACK_IMPORTED_MODULE_10_angular_persistence__["a" /* PersistenceModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_22__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_23__servcies_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_7__app_routing__["b" /* AuthGuard */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_25__components_datatable_dialog_component__["a" /* DialogContent */], __WEBPACK_IMPORTED_MODULE_28__terms_addtermdialog_component__["a" /* AddTermDialogContent */], __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__["a" /* ViewTermDialog */], __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__["a" /* EditTermDialog */], __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__["a" /* DeleteTermDialog */]]
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_25__components_datatable_dialog_component__["a" /* DialogContent */], __WEBPACK_IMPORTED_MODULE_28__terms_addtermdialog_component__["a" /* AddTermDialogContent */], __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__["a" /* ViewTermDialog */], __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__["a" /* EditTermDialog */], __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__["a" /* DeleteTermDialog */], __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__["a" /* AddJobDialogContent */]]
         })
     ], AppModule);
     return AppModule;
@@ -938,7 +941,7 @@ var ROUTES = [
     { path: 'user-login', title: 'Login', icon: 'dashboard', class: '', role: 'admin' },
     { path: 'user-profile', title: 'View Jobs', icon: 'work', class: '', role: 'admin' },
     { path: 'terms', title: 'Manage Terms', icon: 'watch_later', class: '', role: 'admin' },
-    { path: 'table-list', title: 'Jobs', icon: 'work', class: '', role: 'faculty' },
+    { path: 'jobs', title: 'Jobs', icon: 'work', class: '', role: 'faculty' },
     { path: 'table-list', title: 'Manage Terms2', icon: 'watch_later', class: '', role: 'student' }
 ];
 var SidebarComponent = /** @class */ (function () {
@@ -1041,6 +1044,138 @@ var DashboardComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/faculty/job/addjobdialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modal-new .modal-content {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    height: 90%;\r\n    overflow-y: scroll;\r\n    -webkit-transform: translate(-50%, -50%) !important;\r\n            transform: translate(-50%, -50%) !important;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/addjobdialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-content\">\r\n    <div class=\"modal-body\">\r\n        <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"card card-nav-tabs\">\r\n                        <div class=\"card-header\" data-background-color=\"orange\">\r\n                            <h4 class=\"title\">Add Job</h4>\r\n                        </div>\r\n                        <div class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <form name=\"jobForm\" id=\"jobForm\" #jobForm=\"ngForm\">\r\n                                        <div class=\"form-group\">\r\n                                            <label>Title</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"title\" #jobTitle=\"ngModel\" required/>\r\n                                            <div *ngIf=\"jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobTitle.errors.required\">\r\n                                                    Job title is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Description</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"description\" name=\"description\" #jobDescription=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobDescription.invalid && (jobDescription.dirty || jobDescription.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDescription.errors.required\">\r\n                                                    Job description is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Requirements</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"requirements\" name=\"requirements\" #jobRequirements=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobRequirements.invalid && (jobRequirements.dirty || jobRequirements.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobRequirements.errors.required\">\r\n                                                    Job requirements is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Funding</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Self</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Self\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Department</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Department\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobFunding.invalid && (jobFunding.dirty || jobFunding.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobFunding.errors.required\">\r\n                                                    Job funding is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Position for</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Undergraduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Self\" id=\"funding\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Graduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Department\" id=\"funding\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobPositionFor.invalid && (jobPositionFor.dirty || jobPositionFor.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobPositionFor.errors.required\">\r\n                                                    Job position is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Wage</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"wage\" [(ngModel)]=\"wage\" #jobWage=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Hours per week</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"hrsperweek\" [(ngModel)]=\"hrsperweek\" #jobHrsPerWeek=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Resources</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"resources\" [(ngModel)]=\"resources\" #jobResources=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobWage.invalid && (jobWage.dirty || jobWage.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobWage.errors.required\">\r\n                                                    Job wage is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobHrsPerWeek.invalid && (jobHrsPerWeek.dirty || jobHrsPerWeek.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobWage.errors.required\">\r\n                                                    Job hours per week is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobResources.invalid && (jobResources.dirty || jobResources.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobWage.errors.required\">\r\n                                                    Job resources is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Term</label>\r\n                                            <mat-table [dataSource]=\"datasource\" matSort>\r\n                                                <ng-container matColumnDef=\"name\">\r\n                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>\r\n                                                    <mat-cell *matCellDef=\"let vterm\"> {{vterm.name}} </mat-cell>\r\n                                                </ng-container>\r\n                                                <ng-container matColumnDef=\"status\">\r\n                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>\r\n                                                    <mat-cell *matCellDef=\"let vterm\"> {{vterm.status}} </mat-cell>\r\n                                                </ng-container>\r\n                                                <ng-container matColumnDef=\"from\">\r\n                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> From </mat-header-cell>\r\n                                                    <mat-cell *matCellDef=\"let vterm\"> {{vterm.from | date: 'MM/dd/yyyy'}} </mat-cell>\r\n                                                </ng-container>\r\n                                                <ng-container matColumnDef=\"to\">\r\n                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>\r\n                                                    <mat-cell *matCellDef=\"let vterm\"> {{vterm.to | date: 'MM/dd/yyyy'}} </mat-cell>\r\n                                                </ng-container>\r\n                                                <ng-container matColumnDef=\"action\">\r\n                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>\r\n                                                    <mat-cell *matCellDef=\"let vterm\">\r\n                                                        <span>\r\n                                                            <input type=\"radio\" value=\"{{vterm._id}}\" name=\"term\" [(ngModel)]=\"term\" #jobTerm=\"ngModel\" />\r\n                                                        </span>\r\n                                                    </mat-cell>\r\n                                                </ng-container>\r\n                                                <mat-header-row *matHeaderRowDef=\"displayedColumns\" class=\"header-style\"></mat-header-row>\r\n                                                <mat-row *matRowDef=\"let row; columns: displayedColumns\" class=\"row-style\"></mat-row>\r\n                                            </mat-table>\r\n                                            <mat-paginator [pageSize]=\"10\">\r\n                                            </mat-paginator>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Application deadline</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"deadline\" name=\"deadline\" required #jobDeadline=\"ngModel\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Start date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"startdate\" name=\"startdate\" required #jobStartDate=\"ngModel\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>End date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"enddate\" name=\"enddate\" required #jobEndDate=\"ngModel\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobDeadline.invalid && (jobDeadline.dirty || jobDeadline.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDeadline.errors.required\">\r\n                                                    Job application deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobStartDate.invalid && (jobStartDate.dirty || jobStartDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job start date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobEndDate.invalid && (jobEndDate.dirty || jobEndDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job end date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Faculty Comments</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"facultycomment\" name=\"facultycomment\"></textarea>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <div>\r\n            <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!jobForm.form.valid\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"close()\">Cancel</button>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/addjobdialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddJobDialogContent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__ = __webpack_require__("../../../../date-fns/locale/fr/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var AddJobDialogContent = /** @class */ (function (_super) {
+    __extends(AddJobDialogContent, _super);
+    function AddJobDialogContent(dialogService, userService, authService) {
+        var _this = _super.call(this, dialogService) || this;
+        _this.userService = userService;
+        _this.authService = authService;
+        _this.loading = false;
+        _this.datasource = new __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MatTableDataSource */]([]);
+        _this.deadline = new Date(Date.now());
+        _this.startdate = new Date(Date.now());
+        _this.enddate = new Date(Date.now());
+        _this.options = {
+            minYear: 1970,
+            maxYear: 2030,
+            displayFormat: 'MMM D[,] YYYY',
+            barTitleFormat: 'MMMM YYYY',
+            firstCalendarDay: 0,
+            locale: __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__,
+            minDate: _this.deadline,
+            maxDate: new Date(Date.parse(_this.deadline.setDate(_this.deadline.getDate() + 1).toLocaleString())) // Maximal selectable date
+        };
+        _this.validTerms = [];
+        _this.displayedColumns = ['name', 'status', 'from', 'to', 'action'];
+        return _this;
+    }
+    AddJobDialogContent.prototype.confirm = function () {
+    };
+    AddJobDialogContent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loading = true;
+        this.userService.getValidTerms().subscribe(function (val) {
+            _this.loading = false;
+            console.log(val);
+            _this.datasource.data = val;
+            _this.validTerms = val;
+        }, function (err) {
+            _this.loading = false;
+            _this.authService.reset();
+        });
+        this.datasource.paginator = this.paginator;
+        this.datasource.sort = this.sort;
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatPaginator */])
+    ], AddJobDialogContent.prototype, "paginator", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatSort */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatSort */])
+    ], AddJobDialogContent.prototype, "sort", void 0);
+    AddJobDialogContent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'job-data',
+            template: __webpack_require__("../../../../../src/app/faculty/job/addjobdialog.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/faculty/job/addjobdialog.component.css")],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
+            host: {
+                'class': 'modal-new'
+            }
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"], __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__servcies_auth_service__["a" /* AuthService */]])
+    ], AddJobDialogContent);
+    return AddJobDialogContent;
+}(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogComponent"]));
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/faculty/job/job.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1062,7 +1197,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/faculty/job/job.component.html":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div class=\"main-content\">\r\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n    <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n                    <div class=\"col-lg-12\">\r\n                            <div class=\"card card-nav-tabs\">\r\n                                    <div class=\"card-header\" data-background-color=\"purple\">\r\n                                            <h4 class=\"title\">Jobs</h4>\r\n                                    </div>\r\n                                    <div class=\"card-content\">\r\n                                            <div class=\"example-container mat-table\">\r\n                                                    <div>\r\n                                                            <button class=\"btn btn-md btn-success\" (click)=\"opendialog()\">Add Job</button>\r\n                                                    </div>\r\n                                                    \r\n                                                   \r\n                                            </div>\r\n                                    </div>\r\n                            </div>\r\n                    </div>\r\n            </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1076,6 +1211,7 @@ module.exports = ""
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/addjobdialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1089,12 +1225,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FacultyJobs = /** @class */ (function () {
     function FacultyJobs(userService, dialogService) {
         this.userService = userService;
         this.dialogService = dialogService;
         this.displayedColumns = ['name', 'status', 'from', 'to', 'type', 'action'];
     }
+    FacultyJobs.prototype.opendialog = function () {
+        var disposable = this.dialogService.addDialog(__WEBPACK_IMPORTED_MODULE_4__addjobdialog_component__["a" /* AddJobDialogContent */], {})
+            .subscribe(function (isConfirmed) {
+            //We get dialog result
+            if (isConfirmed) {
+            }
+            else {
+            }
+        });
+    };
     FacultyJobs.prototype.ngAfterViewInit = function () {
     };
     __decorate([
@@ -1107,7 +1254,7 @@ var FacultyJobs = /** @class */ (function () {
     ], FacultyJobs.prototype, "sort", void 0);
     FacultyJobs = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'terms',
+            selector: 'jobs',
             template: __webpack_require__("../../../../../src/app/faculty/job/job.component.html"),
             styles: [__webpack_require__("../../../../../src/app/faculty/job/job.component.css")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
@@ -1242,6 +1389,7 @@ var LoginComponent = /** @class */ (function () {
         this.password = "";
         this.authService.getUserDetails().subscribe(function (val) {
             _this.persistentService.set('login', true, { type: __WEBPACK_IMPORTED_MODULE_3_angular_persistence__["c" /* StorageType */].SESSION });
+            _this.persistentService.set('role', val.role, { type: __WEBPACK_IMPORTED_MODULE_3_angular_persistence__["c" /* StorageType */].SESSION });
             _this.router.navigate(['/']);
         }, function (err) {
             if (err.error === 'Unauthorized') {
@@ -1527,13 +1675,8 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getTerms = function () {
         return this.http.get('/getTerms');
     };
-    /*
-    getUserLogin(): Observable<Boolean>{
-  
-    }*/
-    UserService.prototype.getIsLoggedIn = function () {
-        console.log('service');
-        return this.loggedIn.asObservable();
+    UserService.prototype.getValidTerms = function () {
+        return this.http.get('/validTerms');
     };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),

@@ -37,13 +37,7 @@ export class UserService {
     return this.http.get<Term[]>('/getTerms');
   }
 
-  /*
-  getUserLogin(): Observable<Boolean>{
-
-  }*/
-
-  getIsLoggedIn(): Observable<boolean>{
-    console.log('service');
-    return this.loggedIn.asObservable();
+  getValidTerms():Observable<Term[]>{
+    return this.http.get<Term[]>('/validTerms');
   }
 }

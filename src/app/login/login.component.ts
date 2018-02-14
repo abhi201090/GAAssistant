@@ -17,6 +17,7 @@ export class LoginComponent{
     constructor(private authService:AuthService, private router: Router, private persistentService: PersistenceService){
         this.authService.getUserDetails().subscribe(val=>{
             this.persistentService.set('login',true,{type:StorageType.SESSION});
+            this.persistentService.set('role', val.role, {type: StorageType.SESSION});
             this.router.navigate(['/']);
         }, err =>{
             if(err.error === 'Unauthorized'){

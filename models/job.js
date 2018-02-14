@@ -15,9 +15,8 @@ var jobSchema = new Schema({
     resources: { type: Number, required: true},
     funding: {type: String, required: true},
     positionfor: {type: String, required :true},
-    type: { type: String, required: true },
-    facultyComment: { type: String, required: true},
-    adminComment: {type: String, required: true},
+    facultyComment: { type: String},
+    adminComment: {type: String},
     status: {type: String, required: true},
     term:{
         _id: Schema.Types.ObjectId,

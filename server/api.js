@@ -83,7 +83,21 @@ router.get('/getTerms', (req,res)=>{
             }
         }).sort({created_at:-1});
     }
-    
+});
+
+router.get('/validTerms', (req,res)=>{
+    if(!req.user){
+        res.status(500).send({error:"Unauthorized"});
+    }
+    else{
+        Term.find({status:{$in:['Active','Upcoming']}},function(err,terms){
+            if(err)
+                console.log(err);
+            else{
+                res.json(terms);
+            }
+        }).sort({created_at:-1});
+    }
 });
 
 

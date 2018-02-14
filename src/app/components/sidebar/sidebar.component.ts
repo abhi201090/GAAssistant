@@ -19,7 +19,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'user-login', title: 'Login', icon: 'dashboard', class: '', role: 'admin' },
     { path: 'user-profile', title: 'View Jobs', icon: 'work', class: '', role: 'admin' },
     { path: 'terms', title: 'Manage Terms', icon: 'watch_later', class: '', role: 'admin' },
-    { path: 'table-list', title: 'Jobs', icon: 'work', class: '', role: 'faculty' },
+    { path: 'jobs', title: 'Jobs', icon: 'work', class: '', role: 'faculty' },
     { path: 'table-list', title: 'Manage Terms2', icon: 'watch_later', class: '', role: 'student' }
 ];
 
