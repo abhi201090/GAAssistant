@@ -6,7 +6,8 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
-var connection = mongoose.createConnection('mongodb://gaadmin:nailcutter@ds048368.mlab.com:48368/gaapplication');
+//var connection = mongoose.createConnection('mongodb://gaadmin:nailcutter@ds048368.mlab.com:48368/gaapplication');
+var connection = mongoose.createConnection('mongodb://gauser:gapassword@fbsapps.wpi.edu:27017/gaapplication');
 var User = require('./models/user')(connection);
 var app = express();
 
@@ -52,9 +53,8 @@ passport.use(new LocalStrategy(
         if (err) {
           return done(err);
         }
-
+        console.log(user);
         if (!user) {
-          //console.log(user);
           return done(null, false);
         }
         if (user.password != password) {
