@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 server.js",
+    "stop":  "forever stop server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -35,6 +36,7 @@
     "core-js": "^2.5.3",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "forever": "^0.15.3",
     "googleapis": "^23.0.0",
     "jquery": "^3.2.1",
     "moment": "^2.20.1",
