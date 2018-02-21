@@ -1,8 +1,10 @@
 export interface UserInfo {
     _id: string;
-    commonname: string;
-    uid: string;
-    surname: string;
-    givenname: string;
-    email:string;
+    firstName: string;
+    lastName:string;
+    middleName: string;
+    username: string;
+    password: string;
+    email: string;
+    role: string;
 }

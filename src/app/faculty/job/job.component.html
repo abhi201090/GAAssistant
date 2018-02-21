@@ -12,7 +12,44 @@
                                                     <div>
                                                             <button class="btn btn-md btn-success" (click)="opendialog()">Add Job</button>
                                                     </div>
-                                                    
+                                                    <mat-table [dataSource]="datasource" matSort>
+                                                        <ng-container matColumnDef="title">
+                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+                                                                <mat-cell *matCellDef="let job"> {{job.title}} </mat-cell>
+                                                        </ng-container>
+                                                        <ng-container matColumnDef="description">
+                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+                                                                <mat-cell *matCellDef="let job"> {{job.description}} </mat-cell>
+                                                        </ng-container>
+                                                        <ng-container matColumnDef="term">
+                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Term </mat-header-cell>
+                                                                <mat-cell *matCellDef="let job"> {{job.term.name}} </mat-cell>
+                                                        </ng-container>
+                                                        <ng-container matColumnDef="status">
+                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>
+                                                                <mat-cell *matCellDef="let job"> {{job.status}} </mat-cell>
+                                                        </ng-container>
+                                                        <ng-container matColumnDef="action">
+                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
+                                                                <mat-cell *matCellDef="let job">
+                                                                        <span>
+                                                                                <button style="background: transparent; border:none; color: #00BCD4;" (click)="viewterm(job)">
+                                                                                        <i class="material-icons">visibility</i>
+                                                                                </button>
+                                                                                <button style="background: transparent; border:none; color:#FF9800;" (click)="editterm(job)">
+                                                                                        <i class="material-icons">mode_edit</i>
+                                                                                </button>
+                                                                                <button style="background: transparent; border:none; color:#C62828;" (click)="deleteterm(job)">
+                                                                                        <i class="material-icons">delete</i>
+                                                                                </button>
+                                                                        </span>
+                                                                </mat-cell>
+                                                        </ng-container>
+                                                        <mat-header-row *matHeaderRowDef="displayedColumns" class="header-style"></mat-header-row>
+                                                        <mat-row *matRowDef="let row; columns: displayedColumns" class="row-style"></mat-row>
+                                                </mat-table>
+                                                <mat-paginator [pageSize]="10">
+                                                </mat-paginator>
                                                    
                                             </div>
                                     </div>

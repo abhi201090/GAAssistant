@@ -68,8 +68,6 @@ export class AddTermDialogContent extends DialogComponent<Term, boolean> impleme
     if(Date.parse(this.from.toDateString()) < Date.parse(current.toDateString())){
       this.error.isError = true;
       this.error.errorMessage = 'From date cannot be less than current date';
-      console.log(current.toDateString());
-      console.log(this.from.toDateString());
     }
     else{
       if(Date.parse(this.to.toDateString()) < Date.parse(this.from.toDateString())){

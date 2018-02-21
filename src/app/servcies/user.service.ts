@@ -7,6 +7,7 @@ import { window } from 'rxjs/operator/window';
 import { UserInfo } from '../components/interfaces/user.component';
 import { Term } from '../components/interfaces/term.component';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Job } from '../components/interfaces/job.component';
 
 
 @Injectable()
@@ -39,5 +40,13 @@ export class UserService {
 
   getValidTerms():Observable<Term[]>{
     return this.http.get<Term[]>('/validTerms');
+  }
+
+  addJob(data):Observable<any>{
+    return this.http.post('/addJob',data);
+  }
+
+  getFacultyJobs():Observable<Job[]>{
+    return this.http.get<Job[]>('/getFacultyJobs');
   }
 }

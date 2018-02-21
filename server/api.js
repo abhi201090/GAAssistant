@@ -1,10 +1,13 @@
 var mongoose = require('mongoose');
 var objId = mongoose.Types.ObjectId;
+var connection = mongoose.createConnection('mongodb://gaadmin:nailcutter@ds048368.mlab.com:48368/gaapplication');
 var express = require('express');
 var bodyParser = require('body-parser');
 var passport = require('passport');
-var Term = require('../models/terms');
-var User = require('../models/user');
+var Term = require('../models/terms')(connection);
+var User = require('../models/user')(connection);
+var Job = require('../models/job')(connection);
+
 
 var router = express.Router();
 
@@ -97,6 +100,32 @@ router.get('/validTerms', (req,res)=>{
                 res.json(terms);
             }
         }).sort({created_at:-1});
+    }
+});
+
+router.post('/addJob', (req,res)=>{
+    req.body._id = new objId;
+    console.log(req.body);
+    var newJob = Job(req.body);
+    newJob.save(function(err){
+        if(err)
+            console.log('err');
+        else
+            console.log('Job Added');
+    });
+});
+
+router.get('/getFacultyJobs', (req,res)=>{
+    if(!req.user){
+        res.status(500).send({error:"Unauthorized"});
+    }
+    else{
+        Job.find({user:req.user}, function(err,jobs){
+            if(err)
+                console.log(err);
+            else
+                res.json(jobs);
+        }).populate('term').sort({created_at:-1});
     }
 });
 

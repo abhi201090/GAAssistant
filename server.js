@@ -5,7 +5,9 @@ var path = require('path');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('./models/user');
+var mongoose = require('mongoose');
+var connection = mongoose.createConnection('mongodb://gaadmin:nailcutter@ds048368.mlab.com:48368/gaapplication');
+var User = require('./models/user')(connection);
 var app = express();
 
 

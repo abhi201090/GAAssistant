@@ -61,11 +61,12 @@
                                                 <div class="row">
                                                     <div class="col-md-2">
                                                         <label>Undergraduate</label>
-                                                        <input type="radio" name="positionfor" value="Self" id="funding" [(ngModel)]="positionfor" #jobPositionFor="ngModel" required/>
+                                                        <input type="radio" name="positionfor" value="Undergraduate" id="positionfor" [(ngModel)]="positionfor" #jobPositionFor="ngModel" required/>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label>Graduate</label>
-                                                        <input type="radio" name="positionfor" value="Department" id="funding" [(ngModel)]="positionfor" #jobPositionFor="ngModel" required/>
+                                                        <input type="radio" name="positionfor" value="Graduate" id="positionfor" [(ngModel)]="positionfor" #jobPositionFor="ngModel"
+                                                            required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -79,15 +80,15 @@
                                                 <div class="row">
                                                     <div class="col-md-2">
                                                         <label>Wage</label>
-                                                        <input type="number" class="form-control" name="wage" [(ngModel)]="wage" #jobWage="ngModel" required/>
+                                                        <input type="number" class="form-control" name="wage" [(ngModel)]="wage" #jobWage="ngModel" (ngModelChange)="minmaxValidation()" required/>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label>Hours per week</label>
-                                                        <input type="number" class="form-control" name="hrsperweek" [(ngModel)]="hrsperweek" #jobHrsPerWeek="ngModel" required/>
+                                                        <input type="number" class="form-control" name="hrsperweek" [(ngModel)]="hrsperweek" #jobHrsPerWeek="ngModel" (ngModelChange)="minmaxValidation()" required/>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <label>Resources</label>
-                                                        <input type="number" class="form-control" name="resources" [(ngModel)]="resources" #jobResources="ngModel" required/>
+                                                        <input type="number" class="form-control" name="resources" [(ngModel)]="resources" #jobResources="ngModel" (ngModelChange)="minmaxValidation()" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,61 +98,61 @@
                                                 </div>
                                             </div>
                                             <div *ngIf="jobHrsPerWeek.invalid && (jobHrsPerWeek.dirty || jobHrsPerWeek.touched)" style="color:red;">
-                                                <div *ngIf="jobWage.errors.required">
+                                                <div *ngIf="jobHrsPerWeek.errors.required">
                                                     Job hours per week is required.
                                                 </div>
                                             </div>
                                             <div *ngIf="jobResources.invalid && (jobResources.dirty || jobResources.touched)" style="color:red;">
-                                                <div *ngIf="jobWage.errors.required">
+                                                <div *ngIf="jobResources.errors.required">
                                                     Job resources is required.
+                                                </div>
+                                            </div>
+                                            <div *ngIf="minmaxerrors.isError" style="color:red;">
+                                                <div *ngFor="let error of minmaxerrors.errorMessages">
+                                                    <div>
+                                                        {{error}}
+                                                    </div>
                                                 </div>
                                             </div>
                                             <br>
                                             <label>Term</label>
-                                            <mat-table [dataSource]="datasource" matSort>
-                                                <ng-container matColumnDef="name">
-                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-                                                    <mat-cell *matCellDef="let vterm"> {{vterm.name}} </mat-cell>
-                                                </ng-container>
-                                                <ng-container matColumnDef="status">
-                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
-                                                    <mat-cell *matCellDef="let vterm"> {{vterm.status}} </mat-cell>
-                                                </ng-container>
-                                                <ng-container matColumnDef="from">
-                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> From </mat-header-cell>
-                                                    <mat-cell *matCellDef="let vterm"> {{vterm.from | date: 'MM/dd/yyyy'}} </mat-cell>
-                                                </ng-container>
-                                                <ng-container matColumnDef="to">
-                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>
-                                                    <mat-cell *matCellDef="let vterm"> {{vterm.to | date: 'MM/dd/yyyy'}} </mat-cell>
-                                                </ng-container>
-                                                <ng-container matColumnDef="action">
-                                                    <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
-                                                    <mat-cell *matCellDef="let vterm">
-                                                        <span>
-                                                            <input type="radio" value="{{vterm._id}}" name="term" [(ngModel)]="term" #jobTerm="ngModel" />
-                                                        </span>
-                                                    </mat-cell>
-                                                </ng-container>
-                                                <mat-header-row *matHeaderRowDef="displayedColumns" class="header-style"></mat-header-row>
-                                                <mat-row *matRowDef="let row; columns: displayedColumns" class="row-style"></mat-row>
-                                            </mat-table>
-                                            <mat-paginator [pageSize]="10">
-                                            </mat-paginator>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-2">Name</div>
+                                                    <div class="col-md-2">Status</div>
+                                                    <div class="col-md-2">From</div>
+                                                    <div class="col-md-2">To</div>
+                                                    <div class="col-md-2">Action</div>
+                                                </div>
+                                                <div class="row" *ngFor="let vterm of validTerms">
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.name}}</div>
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.status}}</div>
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.from|date: 'MM/dd/yyyy'}}</div>
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.to | date: 'MM/dd/yyyy'}}</div>
+                                                    <div class="col-md-2">
+                                                        <input type="radio" value="{{vterm._id}}" name="term" [(ngModel)]="term" (click)="onTermSelect(vterm)" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="termerror.isError" style="color:red;">
+                                                <div>
+                                                    {{termerror.errorMessage}}
+                                                </div>
+                                            </div>
                                             <br>
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <label>Application deadline</label>
-                                                        <ng-datepicker [(ngModel)]="deadline" name="deadline" required #jobDeadline="ngModel" required></ng-datepicker>
+                                                        <ng-datepicker [(ngModel)]="deadline" name="deadline" #jobDeadline="ngModel" (ngModelChange)="compareDate()" required></ng-datepicker>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label>Start date</label>
-                                                        <ng-datepicker [(ngModel)]="startdate" name="startdate" required #jobStartDate="ngModel" required></ng-datepicker>
+                                                        <ng-datepicker [(ngModel)]="startdate" name="startdate" #jobStartDate="ngModel" (ngModelChange)="compareDate()" required></ng-datepicker>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label>End date</label>
-                                                        <ng-datepicker [(ngModel)]="enddate" name="enddate" required #jobEndDate="ngModel" required></ng-datepicker>
+                                                        <ng-datepicker [(ngModel)]="enddate" name="enddate" #jobEndDate="ngModel" (ngModelChange)="compareDate()" required></ng-datepicker>
                                                     </div>
                                                 </div>
                                             </div>
@@ -170,6 +171,13 @@
                                                     Job end date deadline is required.
                                                 </div>
                                             </div>
+                                            <div *ngIf="dateerrors.isError" style="color:red;">
+                                                <div *ngFor="let error of dateerrors.errorMessages">
+                                                    <div>
+                                                        {{error}}
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <br>
                                             <label>Faculty Comments</label>
                                             <textarea class="form-control" [(ngModel)]="facultycomment" name="facultycomment"></textarea>
@@ -185,7 +193,7 @@
     </div>
     <div class="modal-footer">
         <div>
-            <button type="submit" class="btn btn-success" [disabled]="!jobForm.form.valid">Save</button>
+            <button type="submit" class="btn btn-success" (click)="confirm()" [disabled]="!jobForm.form.valid || termerror.isError || dateerrors.isError || minmaxerrors.isError">Save</button>
             <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
         </div>
     </div>
