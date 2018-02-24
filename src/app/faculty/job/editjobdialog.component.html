@@ -179,8 +179,14 @@
                                                 </div>
                                             </div>
                                             <br>
+                                            <label>Status</label>
+                                            <input type="text" class="form-control" name="status" [(ngModel)]="status" #jobStatus="ngModel"readonly disabled/>
+                                            <br>
                                             <label>Faculty Comment</label>
                                             <textarea class="form-control" [(ngModel)]="facultycomment" name="facultycomment"></textarea>
+                                            <br>
+                                            <label>Administrator Comment</label>
+                                            <textarea type="text" class="form-control"  #jobAdminComment="ngModel" name="admincomment" [(ngModel)]="admincomment" readonly disabled></textarea>
                                         </div>
                                     </form>
                                 </div>

@@ -26,20 +26,20 @@
                                                                 <mat-cell *matCellDef="let job"> {{job.term.name}} </mat-cell>
                                                         </ng-container>
                                                         <ng-container matColumnDef="status">
-                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>
+                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
                                                                 <mat-cell *matCellDef="let job"> {{job.status}} </mat-cell>
                                                         </ng-container>
                                                         <ng-container matColumnDef="action">
                                                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>
                                                                 <mat-cell *matCellDef="let job">
                                                                         <span>
-                                                                                <button style="background: transparent; border:none; color: #00BCD4;" (click)="viewterm(job)">
+                                                                                <button style="background: transparent; border:none; color: #00BCD4;" (click)="viewjob(job)">
                                                                                         <i class="material-icons">visibility</i>
                                                                                 </button>
-                                                                                <button style="background: transparent; border:none; color:#FF9800;" (click)="editterm(job)">
+                                                                                <button style="background: transparent; border:none; color:#FF9800;" (click)="editjob(job)">
                                                                                         <i class="material-icons">mode_edit</i>
                                                                                 </button>
-                                                                                <button style="background: transparent; border:none; color:#C62828;" (click)="deleteterm(job)">
+                                                                                <button style="background: transparent; border:none; color:#C62828;" (click)="deletejob(job)">
                                                                                         <i class="material-icons">delete</i>
                                                                                 </button>
                                                                         </span>

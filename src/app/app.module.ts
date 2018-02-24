@@ -34,7 +34,9 @@ import { AddTermDialogContent } from './terms/addtermdialog.component';
 import { ViewTermDialog } from './terms/viewtermdialog.component';
 import { EditTermDialog } from './terms/edittermdialog.component';
 import { DeleteTermDialog } from './terms/deletetermdialog.component';
-import { AddJobDialogContent} from './faculty/job/addjobdialog.component';
+import { AddJobDialogContent } from './faculty/job/addjobdialog.component';
+import { ViewJobDialogContent } from './faculty/job/viewjobdialog.component';
+import { EditJobDialogContent } from './faculty/job/editjobdialog.component';
 import { LoginComponent } from './login/login.component';
 import { NgDatepickerModule } from 'ng2-datepicker';
 
@@ -54,6 +56,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     ManageTerms,
     AddTermDialogContent,
     AddJobDialogContent,
+    ViewJobDialogContent,
+    EditJobDialogContent,
     ViewTermDialog,
     EditTermDialog,
     DeleteTermDialog,
@@ -79,7 +83,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
   ],
   providers: [UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
-  entryComponents: [DialogContent, AddTermDialogContent, ViewTermDialog, EditTermDialog, DeleteTermDialog, AddJobDialogContent]
+  entryComponents: [DialogContent, AddTermDialogContent, ViewTermDialog, EditTermDialog, DeleteTermDialog, AddJobDialogContent, ViewJobDialogContent,
+    EditJobDialogContent]
 })
-export class AppModule { 
+export class AppModule {
 }

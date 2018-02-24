@@ -54,7 +54,6 @@ export class ManageTerms {
                     }, err => {
                         this.loading = false;
                         if (err.error === 'Unauthorized') {
-                            console.log(err.error);
                         }
                     });
                 }
@@ -76,7 +75,6 @@ export class ManageTerms {
                     }, err => {
                         this.loading = false;
                         if (err.error === 'Unauthorized') {
-                            console.log(err.error);
                         }
                     });
                 }
@@ -109,7 +107,6 @@ export class ManageTerms {
                     }, err => {
                         this.loading = false;
                         if (err.error === 'Unauthorized') {
-                            console.log(err.error);
                         }
                     });
                 }

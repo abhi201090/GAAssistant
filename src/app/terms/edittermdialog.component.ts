@@ -66,14 +66,11 @@ export class EditTermDialog extends DialogComponent<Term, boolean> implements Te
     if(Date.parse(this.from.toDateString()) < Date.parse(current.toDateString())){
       this.error.isError = true;
       this.error.errorMessage = 'From date cannot be less than current date';
-      console.log(current.toDateString());
-      console.log(this.from.toDateString());
     }
     else{
       if(Date.parse(this.to.toDateString()) < Date.parse(this.from.toDateString())){
         this.error.errorMessage = '"To" date must be greater than "From" date';
         this.error.isError = true;
-        console.log('here');
       }
       else{
         this.error.errorMessage = '';

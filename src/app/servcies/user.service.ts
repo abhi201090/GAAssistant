@@ -49,4 +49,8 @@ export class UserService {
   getFacultyJobs():Observable<Job[]>{
     return this.http.get<Job[]>('/getFacultyJobs');
   }
+
+  updateJob(data):Observable<any>{
+    return this.http.post('/updateJob',data);
+  }
 }

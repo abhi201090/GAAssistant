@@ -36,10 +36,8 @@ export class SidebarComponent implements OnInit {
 
     ngOnInit() {
         this.authService.isLoggedIn.subscribe((val:boolean)=>{
-            console.log(val);
             if(val){
                 let role = this.persistenceService.get('role', StorageType.SESSION);
-                console.log(role);
                 this.menuItems = ROUTES.filter(menuItem => menuItem.role === role);
             }
         });
@@ -53,7 +51,6 @@ export class SidebarComponent implements OnInit {
         return true;
     };
     navigate(path) {
-        console.log(path);
         this.router.navigate(['/'+path]);
     }
 }

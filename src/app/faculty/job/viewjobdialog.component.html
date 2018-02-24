@@ -1,0 +1,130 @@
+<div class="modal-content">
+    <div class="modal-body">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', primaryColor:'#C52828' }"></ngx-loading>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card card-nav-tabs">
+                        <div class="card-header" data-background-color="orange">
+                            <h4 class="title">Add Job</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form name="jobForm" id="jobForm" #jobForm="ngForm">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" name="title" [(ngModel)]="title" #jobTitle="ngModel" readonly disabled/>
+                                            <br>
+                                            <label>Description</label>
+                                            <textarea class="form-control" [(ngModel)]="description" name="description" #jobDescription="ngModel" readonly disabled></textarea>
+                                            <br>
+                                            <label>Requirements</label>
+                                            <textarea class="form-control" [(ngModel)]="requirements" name="requirements" #jobRequirements="ngModel" readonly disabled></textarea>
+                                            <br>
+                                            <label>Funding</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <label>Self</label>
+                                                        <input type="radio" name="funding" value="Self" id="funding" [(ngModel)]="funding" #jobFunding="ngModel" readonly disabled/>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label>Department</label>
+                                                        <input type="radio" name="funding" value="Department" id="funding" [(ngModel)]="funding" #jobFunding="ngModel" readonly disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <label>Position for</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <label>Undergraduate</label>
+                                                        <input type="radio" name="positionfor" value="Undergraduate" id="positionfor" [(ngModel)]="positionfor" #jobPositionFor="ngModel" readonly disabled/>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label>Graduate</label>
+                                                        <input type="radio" name="positionfor" value="Graduate" id="positionfor" [(ngModel)]="positionfor" #jobPositionFor="ngModel" readonly disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <label>Wage</label>
+                                                        <input type="number" class="form-control" name="wage" [(ngModel)]="wage" #jobWage="ngModel" (ngModelChange)="minmaxValidation()" readonly disabled/>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label>Hours per week</label>
+                                                        <input type="number" class="form-control" name="hrsperweek" [(ngModel)]="hrsperweek" #jobHrsPerWeek="ngModel" readonly disabled/>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <label>Resources</label>
+                                                        <input type="number" class="form-control" name="resources" [(ngModel)]="resources" #jobResources="ngModel"  readonly disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <label>Term</label>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-2">Name</div>
+                                                    <div class="col-md-2">Status</div>
+                                                    <div class="col-md-2">From</div>
+                                                    <div class="col-md-2">To</div>
+                                                    <div class="col-md-2">Action</div>
+                                                </div>
+                                                <div class="row" *ngFor="let vterm of validTerms">
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.name}}</div>
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.status}}</div>
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.from|date: 'MM/dd/yyyy'}}</div>
+                                                    <div class="col-md-2" style="color: #AAAAAA;">{{vterm.to | date: 'MM/dd/yyyy'}}</div>
+                                                    <div class="col-md-2">
+                                                        <input type="radio" value="{{vterm._id}}" name="term" [(ngModel)]="selectedterm" disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <label>Application deadline</label>
+                                                        <input type="text" class="form-control" value="{{deadline | date: 'MM/dd/yyyy'}}" readonly disabled />
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label>Start date</label>
+                                                        <input type="text" class="form-control" value="{{startdate | date: 'MM/dd/yyyy'}}" readonly disabled/>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label>End date</label>
+                                                        <input type="text" class="form-control" value="{{enddate | date: 'MM/dd/yyyy'}}" readonly disabled/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <label>Status</label>
+                                            <input type="text" class="form-control" name="status" [(ngModel)]="status" #jobStatus="ngModel"readonly disabled/>
+                                            <br>
+                                            <label>Faculty Comment</label>
+                                            <textarea class="form-control" [(ngModel)]="facultycomment" name="facultycomment" readonly disabled></textarea>
+                                            <br>
+                                            <label>Administrator Comment</label>
+                                            <textarea type="text" class="form-control"  #jobAdminComment="ngModel" name="admincomment" [(ngModel)]="admincomment" readonly disabled></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <button type="button" class="btn btn-default" (click)="close()">Cancel</button>
+        </div>
+    </div>
+</div>

@@ -203,15 +203,19 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__ = __webpack_require__("../../../../../src/app/terms/edittermdialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__ = __webpack_require__("../../../../../src/app/terms/deletetermdialog.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/addjobdialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_datepicker__ = __webpack_require__("../../../../ng2-datepicker/bundles/ng2-datepicker.umd.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34_ng2_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_34_ng2_datepicker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__faculty_job_viewjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/viewjobdialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__faculty_job_editjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/editjobdialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36_ng2_datepicker__ = __webpack_require__("../../../../ng2-datepicker/bundles/ng2-datepicker.umd.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36_ng2_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_36_ng2_datepicker__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -267,11 +271,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26__terms_terms_component__["a" /* ManageTerms */],
                 __WEBPACK_IMPORTED_MODULE_28__terms_addtermdialog_component__["a" /* AddTermDialogContent */],
                 __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__["a" /* AddJobDialogContent */],
+                __WEBPACK_IMPORTED_MODULE_33__faculty_job_viewjobdialog_component__["a" /* ViewJobDialogContent */],
+                __WEBPACK_IMPORTED_MODULE_34__faculty_job_editjobdialog_component__["a" /* EditJobDialogContent */],
                 __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__["a" /* ViewTermDialog */],
                 __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__["a" /* EditTermDialog */],
                 __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__["a" /* DeleteTermDialog */],
                 __WEBPACK_IMPORTED_MODULE_27__faculty_job_job_component__["a" /* FacultyJobs */],
-                __WEBPACK_IMPORTED_MODULE_33__login_login_component__["a" /* LoginComponent */]
+                __WEBPACK_IMPORTED_MODULE_35__login_login_component__["a" /* LoginComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -286,13 +292,14 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_20__angular_material__["d" /* MatSortModule */],
                 __WEBPACK_IMPORTED_MODULE_24_ng2_bootstrap_modal__["BootstrapModalModule"],
-                __WEBPACK_IMPORTED_MODULE_34_ng2_datepicker__["NgDatepickerModule"],
+                __WEBPACK_IMPORTED_MODULE_36_ng2_datepicker__["NgDatepickerModule"],
                 __WEBPACK_IMPORTED_MODULE_6_ngx_loading__["a" /* LoadingModule */],
                 __WEBPACK_IMPORTED_MODULE_10_angular_persistence__["a" /* PersistenceModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_22__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_23__servcies_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_7__app_routing__["b" /* AuthGuard */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_25__components_datatable_dialog_component__["a" /* DialogContent */], __WEBPACK_IMPORTED_MODULE_28__terms_addtermdialog_component__["a" /* AddTermDialogContent */], __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__["a" /* ViewTermDialog */], __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__["a" /* EditTermDialog */], __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__["a" /* DeleteTermDialog */], __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__["a" /* AddJobDialogContent */]]
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_25__components_datatable_dialog_component__["a" /* DialogContent */], __WEBPACK_IMPORTED_MODULE_28__terms_addtermdialog_component__["a" /* AddTermDialogContent */], __WEBPACK_IMPORTED_MODULE_29__terms_viewtermdialog_component__["a" /* ViewTermDialog */], __WEBPACK_IMPORTED_MODULE_30__terms_edittermdialog_component__["a" /* EditTermDialog */], __WEBPACK_IMPORTED_MODULE_31__terms_deletetermdialog_component__["a" /* DeleteTermDialog */], __WEBPACK_IMPORTED_MODULE_32__faculty_job_addjobdialog_component__["a" /* AddJobDialogContent */], __WEBPACK_IMPORTED_MODULE_33__faculty_job_viewjobdialog_component__["a" /* ViewJobDialogContent */],
+                __WEBPACK_IMPORTED_MODULE_34__faculty_job_editjobdialog_component__["a" /* EditJobDialogContent */]]
         })
     ], AppModule);
     return AppModule;
@@ -954,10 +961,8 @@ var SidebarComponent = /** @class */ (function () {
     SidebarComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.authService.isLoggedIn.subscribe(function (val) {
-            console.log(val);
             if (val) {
                 var role_1 = _this.persistenceService.get('role', __WEBPACK_IMPORTED_MODULE_4_angular_persistence__["c" /* StorageType */].SESSION);
-                console.log(role_1);
                 _this.menuItems = ROUTES.filter(function (menuItem) { return menuItem.role === role_1; });
             }
         });
@@ -971,7 +976,6 @@ var SidebarComponent = /** @class */ (function () {
     };
     ;
     SidebarComponent.prototype.navigate = function (path) {
-        console.log(path);
         this.router.navigate(['/' + path]);
     };
     SidebarComponent = __decorate([
@@ -1065,7 +1069,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/faculty/job/addjobdialog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-content\">\r\n    <div class=\"modal-body\">\r\n        <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"card card-nav-tabs\">\r\n                        <div class=\"card-header\" data-background-color=\"orange\">\r\n                            <h4 class=\"title\">Add Job</h4>\r\n                        </div>\r\n                        <div class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <form name=\"jobForm\" id=\"jobForm\" #jobForm=\"ngForm\">\r\n                                        <div class=\"form-group\">\r\n                                            <label>Title</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"title\" #jobTitle=\"ngModel\" required/>\r\n                                            <div *ngIf=\"jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobTitle.errors.required\">\r\n                                                    Job title is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Description</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"description\" name=\"description\" #jobDescription=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobDescription.invalid && (jobDescription.dirty || jobDescription.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDescription.errors.required\">\r\n                                                    Job description is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Requirements</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"requirements\" name=\"requirements\" #jobRequirements=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobRequirements.invalid && (jobRequirements.dirty || jobRequirements.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobRequirements.errors.required\">\r\n                                                    Job requirements is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Funding</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Self</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Self\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Department</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Department\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobFunding.invalid && (jobFunding.dirty || jobFunding.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobFunding.errors.required\">\r\n                                                    Job funding is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Position for</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Undergraduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Undergraduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Graduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Graduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\"\r\n                                                            required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobPositionFor.invalid && (jobPositionFor.dirty || jobPositionFor.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobPositionFor.errors.required\">\r\n                                                    Job position is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Wage</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"wage\" [(ngModel)]=\"wage\" #jobWage=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Hours per week</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"hrsperweek\" [(ngModel)]=\"hrsperweek\" #jobHrsPerWeek=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Resources</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"resources\" [(ngModel)]=\"resources\" #jobResources=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobWage.invalid && (jobWage.dirty || jobWage.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobWage.errors.required\">\r\n                                                    Job wage is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobHrsPerWeek.invalid && (jobHrsPerWeek.dirty || jobHrsPerWeek.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobHrsPerWeek.errors.required\">\r\n                                                    Job hours per week is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobResources.invalid && (jobResources.dirty || jobResources.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobResources.errors.required\">\r\n                                                    Job resources is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"minmaxerrors.isError\" style=\"color:red;\">\r\n                                                <div *ngFor=\"let error of minmaxerrors.errorMessages\">\r\n                                                    <div>\r\n                                                        {{error}}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Term</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">Name</div>\r\n                                                    <div class=\"col-md-2\">Status</div>\r\n                                                    <div class=\"col-md-2\">From</div>\r\n                                                    <div class=\"col-md-2\">To</div>\r\n                                                    <div class=\"col-md-2\">Action</div>\r\n                                                </div>\r\n                                                <div class=\"row\" *ngFor=\"let vterm of validTerms\">\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.name}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.status}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.from|date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.to | date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <input type=\"radio\" value=\"{{vterm._id}}\" name=\"term\" [(ngModel)]=\"term\" (click)=\"onTermSelect(vterm)\" />\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"termerror.isError\" style=\"color:red;\">\r\n                                                <div>\r\n                                                    {{termerror.errorMessage}}\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Application deadline</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"deadline\" name=\"deadline\" #jobDeadline=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Start date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"startdate\" name=\"startdate\" #jobStartDate=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>End date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"enddate\" name=\"enddate\" #jobEndDate=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobDeadline.invalid && (jobDeadline.dirty || jobDeadline.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDeadline.errors.required\">\r\n                                                    Job application deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobStartDate.invalid && (jobStartDate.dirty || jobStartDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job start date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobEndDate.invalid && (jobEndDate.dirty || jobEndDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job end date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"dateerrors.isError\" style=\"color:red;\">\r\n                                                <div *ngFor=\"let error of dateerrors.errorMessages\">\r\n                                                    <div>\r\n                                                        {{error}}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Faculty Comments</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"facultycomment\" name=\"facultycomment\"></textarea>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <div>\r\n            <button type=\"submit\" class=\"btn btn-success\" (click)=\"confirm()\" [disabled]=\"!jobForm.form.valid || termerror.isError || dateerrors.isError || minmaxerrors.isError\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"close()\">Cancel</button>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"modal-content\">\r\n    <div class=\"modal-body\">\r\n        <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"card card-nav-tabs\">\r\n                        <div class=\"card-header\" data-background-color=\"orange\">\r\n                            <h4 class=\"title\">Add Job</h4>\r\n                        </div>\r\n                        <div class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <form name=\"jobForm\" id=\"jobForm\" #jobForm=\"ngForm\">\r\n                                        <div class=\"form-group\">\r\n                                            <label>Title</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"title\" #jobTitle=\"ngModel\" required/>\r\n                                            <div *ngIf=\"jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobTitle.errors.required\">\r\n                                                    Job title is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Description</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"description\" name=\"description\" #jobDescription=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobDescription.invalid && (jobDescription.dirty || jobDescription.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDescription.errors.required\">\r\n                                                    Job description is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Requirements</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"requirements\" name=\"requirements\" #jobRequirements=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobRequirements.invalid && (jobRequirements.dirty || jobRequirements.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobRequirements.errors.required\">\r\n                                                    Job requirements is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Funding</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Self</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Self\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Department</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Department\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobFunding.invalid && (jobFunding.dirty || jobFunding.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobFunding.errors.required\">\r\n                                                    Job funding is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Position for</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Undergraduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Undergraduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Graduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Graduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\"\r\n                                                            required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobPositionFor.invalid && (jobPositionFor.dirty || jobPositionFor.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobPositionFor.errors.required\">\r\n                                                    Job position is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Wage</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"wage\" [(ngModel)]=\"wage\" #jobWage=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Hours per week</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"hrsperweek\" [(ngModel)]=\"hrsperweek\" #jobHrsPerWeek=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Resources</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"resources\" [(ngModel)]=\"resources\" #jobResources=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobWage.invalid && (jobWage.dirty || jobWage.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobWage.errors.required\">\r\n                                                    Job wage is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobHrsPerWeek.invalid && (jobHrsPerWeek.dirty || jobHrsPerWeek.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobHrsPerWeek.errors.required\">\r\n                                                    Job hours per week is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobResources.invalid && (jobResources.dirty || jobResources.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobResources.errors.required\">\r\n                                                    Job resources is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"minmaxerrors.isError\" style=\"color:red;\">\r\n                                                <div *ngFor=\"let error of minmaxerrors.errorMessages\">\r\n                                                    <div>\r\n                                                        {{error}}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Term</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">Name</div>\r\n                                                    <div class=\"col-md-2\">Status</div>\r\n                                                    <div class=\"col-md-2\">From</div>\r\n                                                    <div class=\"col-md-2\">To</div>\r\n                                                    <div class=\"col-md-2\">Action</div>\r\n                                                </div>\r\n                                                <div class=\"row\" *ngFor=\"let vterm of validTerms\">\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.name}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.status}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.from|date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.to | date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <input type=\"radio\" value=\"{{vterm._id}}\" name=\"term\" [(ngModel)]=\"selectedterm\" (click)=\"onTermSelect(vterm)\" />\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"termerror.isError\" style=\"color:red;\">\r\n                                                <div>\r\n                                                    {{termerror.errorMessage}}\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Application deadline</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"deadline\" name=\"deadline\" #jobDeadline=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Start date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"startdate\" name=\"startdate\" #jobStartDate=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>End date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"enddate\" name=\"enddate\" #jobEndDate=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobDeadline.invalid && (jobDeadline.dirty || jobDeadline.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDeadline.errors.required\">\r\n                                                    Job application deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobStartDate.invalid && (jobStartDate.dirty || jobStartDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job start date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobEndDate.invalid && (jobEndDate.dirty || jobEndDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job end date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"dateerrors.isError\" style=\"color:red;\">\r\n                                                <div *ngFor=\"let error of dateerrors.errorMessages\">\r\n                                                    <div>\r\n                                                        {{error}}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Faculty Comment</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"facultycomment\" name=\"facultycomment\"></textarea>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <div>\r\n            <button type=\"submit\" class=\"btn btn-success\" (click)=\"confirm()\" [disabled]=\"!jobForm.form.valid || termerror.isError || dateerrors.isError || minmaxerrors.isError\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"close()\">Cancel</button>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1123,7 +1127,6 @@ var AddJobDialogContent = /** @class */ (function (_super) {
             maxDate: new Date(Date.now()) // Maximal selectable date
         };
         _this.validTerms = [];
-        _this.displayedColumns = ['name', 'status', 'from', 'to', 'action'];
         _this.dateerrors = { isError: true, errorMessages: [] };
         _this.minmaxerrors = { isError: false, errorMessages: [] };
         _this.termerror = { isError: true, errorMessage: 'Term is required' };
@@ -1133,8 +1136,8 @@ var AddJobDialogContent = /** @class */ (function (_super) {
         return _this;
     }
     AddJobDialogContent.prototype.onTermSelect = function (data) {
-        this.selectedTerm = data;
-        this.term = data._id;
+        this.selectedterm = data._id;
+        this.term = data;
         this.termerror.isError = false;
         this.termerror.errorMessage = '';
         this.compareDate();
@@ -1157,8 +1160,8 @@ var AddJobDialogContent = /** @class */ (function (_super) {
     };
     AddJobDialogContent.prototype.compareDate = function () {
         var current = new Date(Date.now());
-        var termStart = new Date(this.selectedTerm.from);
-        var termEnd = new Date(this.selectedTerm.to);
+        var termStart = new Date(this.term.from);
+        var termEnd = new Date(this.term.to);
         this.dateerrors.isError = false;
         this.dateerrors.errorMessages = [];
         if (this.term) {
@@ -1167,7 +1170,6 @@ var AddJobDialogContent = /** @class */ (function (_super) {
                 this.dateerrors.errorMessages.push('Deadline must be greater than current date');
             }
             if (Date.parse(this.deadline.toDateString()) >= Date.parse(this.startdate.toDateString())) {
-                console.log('something');
                 this.dateerrors.isError = true;
                 this.dateerrors.errorMessages.push('Deadline must be less than start date');
             }
@@ -1216,7 +1218,7 @@ var AddJobDialogContent = /** @class */ (function (_super) {
             facultycomment: this.facultycomment,
             admincomment: this.admincomment,
             status: this.status,
-            term: this.selectedTerm,
+            term: this.term,
             user: this.user,
             createdat: new Date(Date.now()),
             updatedat: new Date(Date.now())
@@ -1262,6 +1264,223 @@ var AddJobDialogContent = /** @class */ (function (_super) {
 
 /***/ }),
 
+/***/ "../../../../../src/app/faculty/job/editjobdialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modal-new .modal-content {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    height: 90%;\r\n    overflow-y: scroll;\r\n    -webkit-transform: translate(-50%, -50%) !important;\r\n            transform: translate(-50%, -50%) !important;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/editjobdialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-content\">\r\n    <div class=\"modal-body\">\r\n        <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"card card-nav-tabs\">\r\n                        <div class=\"card-header\" data-background-color=\"orange\">\r\n                            <h4 class=\"title\">Add Job</h4>\r\n                        </div>\r\n                        <div class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <form name=\"jobForm\" id=\"jobForm\" #jobForm=\"ngForm\">\r\n                                        <div class=\"form-group\">\r\n                                            <label>Title</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"title\" #jobTitle=\"ngModel\" required/>\r\n                                            <div *ngIf=\"jobTitle.invalid && (jobTitle.dirty || jobTitle.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobTitle.errors.required\">\r\n                                                    Job title is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Description</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"description\" name=\"description\" #jobDescription=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobDescription.invalid && (jobDescription.dirty || jobDescription.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDescription.errors.required\">\r\n                                                    Job description is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Requirements</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"requirements\" name=\"requirements\" #jobRequirements=\"ngModel\" required></textarea>\r\n                                            <div *ngIf=\"jobRequirements.invalid && (jobRequirements.dirty || jobRequirements.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobRequirements.errors.required\">\r\n                                                    Job requirements is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Funding</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Self</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Self\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Department</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Department\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobFunding.invalid && (jobFunding.dirty || jobFunding.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobFunding.errors.required\">\r\n                                                    Job funding is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Position for</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Undergraduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Undergraduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Graduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Graduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\"\r\n                                                            required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobPositionFor.invalid && (jobPositionFor.dirty || jobPositionFor.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobPositionFor.errors.required\">\r\n                                                    Job position is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Wage</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"wage\" [(ngModel)]=\"wage\" #jobWage=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Hours per week</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"hrsperweek\" [(ngModel)]=\"hrsperweek\" #jobHrsPerWeek=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Resources</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"resources\" [(ngModel)]=\"resources\" #jobResources=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" required/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobWage.invalid && (jobWage.dirty || jobWage.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobWage.errors.required\">\r\n                                                    Job wage is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobHrsPerWeek.invalid && (jobHrsPerWeek.dirty || jobHrsPerWeek.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobHrsPerWeek.errors.required\">\r\n                                                    Job hours per week is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobResources.invalid && (jobResources.dirty || jobResources.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobResources.errors.required\">\r\n                                                    Job resources is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"minmaxerrors.isError\" style=\"color:red;\">\r\n                                                <div *ngFor=\"let error of minmaxerrors.errorMessages\">\r\n                                                    <div>\r\n                                                        {{error}}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Term</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">Name</div>\r\n                                                    <div class=\"col-md-2\">Status</div>\r\n                                                    <div class=\"col-md-2\">From</div>\r\n                                                    <div class=\"col-md-2\">To</div>\r\n                                                    <div class=\"col-md-2\">Action</div>\r\n                                                </div>\r\n                                                <div class=\"row\" *ngFor=\"let vterm of validTerms\">\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.name}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.status}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.from|date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.to | date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <input type=\"radio\" value=\"{{vterm._id}}\" name=\"term\" [(ngModel)]=\"selectedterm\" (click)=\"onTermSelect(vterm)\" />\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"termerror.isError\" style=\"color:red;\">\r\n                                                <div>\r\n                                                    {{termerror.errorMessage}}\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Application deadline</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"deadline\" name=\"deadline\" #jobDeadline=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Start date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"startdate\" name=\"startdate\" #jobStartDate=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>End date</label>\r\n                                                        <ng-datepicker [(ngModel)]=\"enddate\" name=\"enddate\" #jobEndDate=\"ngModel\" (ngModelChange)=\"compareDate()\" required></ng-datepicker>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobDeadline.invalid && (jobDeadline.dirty || jobDeadline.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobDeadline.errors.required\">\r\n                                                    Job application deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobStartDate.invalid && (jobStartDate.dirty || jobStartDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job start date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"jobEndDate.invalid && (jobEndDate.dirty || jobEndDate.touched)\" style=\"color:red;\">\r\n                                                <div *ngIf=\"jobStartDate.errors.required\">\r\n                                                    Job end date deadline is required.\r\n                                                </div>\r\n                                            </div>\r\n                                            <div *ngIf=\"dateerrors.isError\" style=\"color:red;\">\r\n                                                <div *ngFor=\"let error of dateerrors.errorMessages\">\r\n                                                    <div>\r\n                                                        {{error}}\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Status</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"status\" [(ngModel)]=\"status\" #jobStatus=\"ngModel\"readonly disabled/>\r\n                                            <br>\r\n                                            <label>Faculty Comment</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"facultycomment\" name=\"facultycomment\"></textarea>\r\n                                            <br>\r\n                                            <label>Administrator Comment</label>\r\n                                            <textarea type=\"text\" class=\"form-control\"  #jobAdminComment=\"ngModel\" name=\"admincomment\" [(ngModel)]=\"admincomment\" readonly disabled></textarea>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <div>\r\n            <button type=\"submit\" class=\"btn btn-success\" (click)=\"confirm()\" [disabled]=\"!jobForm.form.valid || termerror.isError || dateerrors.isError || minmaxerrors.isError\">Save</button>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"close()\">Cancel</button>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/editjobdialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditJobDialogContent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__ = __webpack_require__("../../../../date-fns/locale/fr/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var EditJobDialogContent = /** @class */ (function (_super) {
+    __extends(EditJobDialogContent, _super);
+    function EditJobDialogContent(dialogService, userService, authService) {
+        var _this = _super.call(this, dialogService) || this;
+        _this.userService = userService;
+        _this.authService = authService;
+        _this.loading = false;
+        _this.options = {
+            minYear: 1970,
+            maxYear: 2030,
+            displayFormat: 'MMM D[,] YYYY',
+            barTitleFormat: 'MMMM YYYY',
+            firstCalendarDay: 0,
+            locale: __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__,
+            minDate: new Date(Date.now()),
+            maxDate: new Date(Date.now()) // Maximal selectable date
+        };
+        _this.validTerms = [];
+        _this.dateerrors = { isError: false, errorMessages: [] };
+        _this.minmaxerrors = { isError: false, errorMessages: [] };
+        _this.termerror = { isError: false, errorMessage: '' };
+        _this.deadline = new Date(new Date(Date.now()).setDate(new Date(Date.now()).getDate() + 1));
+        _this.startdate = new Date(new Date(Date.now()).setDate(new Date(Date.now()).getDate() + 2));
+        _this.enddate = new Date(new Date(Date.now()).setDate(new Date(Date.now()).getDate() + 3));
+        return _this;
+    }
+    EditJobDialogContent.prototype.onTermSelect = function (data) {
+        this.selectedterm = data._id;
+        this.term = data;
+        this.termerror.isError = false;
+        this.termerror.errorMessage = '';
+        this.compareDate();
+    };
+    EditJobDialogContent.prototype.minmaxValidation = function () {
+        this.minmaxerrors.isError = false;
+        this.minmaxerrors.errorMessages = [];
+        if (this.wage && (this.wage < 10 || this.wage > 15)) {
+            this.minmaxerrors.isError = true;
+            this.minmaxerrors.errorMessages.push('Wage must be between 10 and 15');
+        }
+        if (this.hrsperweek && (this.hrsperweek > 20 || this.hrsperweek < 1)) {
+            this.minmaxerrors.isError = true;
+            this.minmaxerrors.errorMessages.push('Hours per week must be between 1 and 20');
+        }
+        if (this.resources && this.resources < 1) {
+            this.minmaxerrors.isError = true;
+            this.minmaxerrors.errorMessages.push('Minimum resources is 1');
+        }
+    };
+    EditJobDialogContent.prototype.compareDate = function () {
+        var current = new Date(Date.now());
+        var termStart = new Date(this.term.from);
+        var termEnd = new Date(this.term.to);
+        this.dateerrors.isError = false;
+        this.dateerrors.errorMessages = [];
+        if (this.term) {
+            if (Date.parse(this.deadline.toDateString()) <= Date.parse(current.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('Deadline must be greater than current date');
+            }
+            if (Date.parse(this.deadline.toDateString()) >= Date.parse(this.startdate.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('Deadline must be less than start date');
+            }
+            if (Date.parse(this.deadline.toDateString()) >= Date.parse(this.enddate.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('Deadline must be less than end date');
+            }
+            if (Date.parse(this.deadline.toDateString()) >= Date.parse(termEnd.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('Deadline must be less than term end date');
+            }
+            if (Date.parse(this.startdate.toDateString()) < Date.parse(termStart.toDateString()) || Date.parse(this.startdate.toDateString()) >= Date.parse(termEnd.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('Start date must be between than term start date and end date');
+            }
+            if (Date.parse(this.enddate.toDateString()) <= Date.parse(this.startdate.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('End date must be greater than start date');
+            }
+            if (Date.parse(this.enddate.toDateString()) > Date.parse(termEnd.toDateString())) {
+                this.dateerrors.isError = true;
+                this.dateerrors.errorMessages.push('End date must be less than or equal to term end date');
+            }
+        }
+    };
+    EditJobDialogContent.prototype.confirm = function () {
+        var _this = this;
+        this.loading = true;
+        if (this.funding == 'Self')
+            this.status = 'Approved';
+        else
+            this.status = 'Pending';
+        var data = {
+            _id: this._id,
+            title: this.title,
+            description: this.description,
+            requirements: this.requirements,
+            deadline: this.deadline,
+            startdate: this.startdate,
+            enddate: this.enddate,
+            wage: this.wage,
+            hrsperweek: this.hrsperweek,
+            resources: this.resources,
+            funding: this.funding,
+            positionfor: this.positionfor,
+            facultycomment: this.facultycomment,
+            admincomment: this.admincomment,
+            status: this.status,
+            term: this.term,
+            user: this.user,
+            createdat: this.createdat,
+            updatedat: new Date(Date.now())
+        };
+        this.userService.updateJob(data).subscribe(function (res) {
+            _this.loading = false;
+        });
+        this.result = true;
+        this.close();
+    };
+    EditJobDialogContent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loading = true;
+        this.selectedterm = this.term._id;
+        this.userService.getValidTerms().subscribe(function (val) {
+            _this.loading = false;
+            _this.validTerms = val;
+        }, function (err) {
+            _this.loading = false;
+            _this.result = true;
+            _this.close();
+            _this.authService.reset();
+        });
+        this.authService.getUserDetails().subscribe(function (val) {
+            _this.user = val;
+        });
+    };
+    EditJobDialogContent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'job-data',
+            template: __webpack_require__("../../../../../src/app/faculty/job/editjobdialog.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/faculty/job/editjobdialog.component.css")],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
+            host: {
+                'class': 'modal-new'
+            }
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"], __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__servcies_auth_service__["a" /* AuthService */]])
+    ], EditJobDialogContent);
+    return EditJobDialogContent;
+}(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogComponent"]));
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/faculty/job/job.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1283,7 +1502,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/faculty/job/job.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n    <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n                    <div class=\"col-lg-12\">\r\n                            <div class=\"card card-nav-tabs\">\r\n                                    <div class=\"card-header\" data-background-color=\"purple\">\r\n                                            <h4 class=\"title\">Jobs</h4>\r\n                                    </div>\r\n                                    <div class=\"card-content\">\r\n                                            <div class=\"example-container mat-table\">\r\n                                                    <div>\r\n                                                            <button class=\"btn btn-md btn-success\" (click)=\"opendialog()\">Add Job</button>\r\n                                                    </div>\r\n                                                    <mat-table [dataSource]=\"datasource\" matSort>\r\n                                                        <ng-container matColumnDef=\"title\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.title}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"description\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.description}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"term\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Term </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.term.name}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"status\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> To </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.status}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"action\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\">\r\n                                                                        <span>\r\n                                                                                <button style=\"background: transparent; border:none; color: #00BCD4;\" (click)=\"viewterm(job)\">\r\n                                                                                        <i class=\"material-icons\">visibility</i>\r\n                                                                                </button>\r\n                                                                                <button style=\"background: transparent; border:none; color:#FF9800;\" (click)=\"editterm(job)\">\r\n                                                                                        <i class=\"material-icons\">mode_edit</i>\r\n                                                                                </button>\r\n                                                                                <button style=\"background: transparent; border:none; color:#C62828;\" (click)=\"deleteterm(job)\">\r\n                                                                                        <i class=\"material-icons\">delete</i>\r\n                                                                                </button>\r\n                                                                        </span>\r\n                                                                </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <mat-header-row *matHeaderRowDef=\"displayedColumns\" class=\"header-style\"></mat-header-row>\r\n                                                        <mat-row *matRowDef=\"let row; columns: displayedColumns\" class=\"row-style\"></mat-row>\r\n                                                </mat-table>\r\n                                                <mat-paginator [pageSize]=\"10\">\r\n                                                </mat-paginator>\r\n                                                   \r\n                                            </div>\r\n                                    </div>\r\n                            </div>\r\n                    </div>\r\n            </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"main-content\">\r\n    <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n    <div class=\"container-fluid\">\r\n            <div class=\"row\">\r\n                    <div class=\"col-lg-12\">\r\n                            <div class=\"card card-nav-tabs\">\r\n                                    <div class=\"card-header\" data-background-color=\"purple\">\r\n                                            <h4 class=\"title\">Jobs</h4>\r\n                                    </div>\r\n                                    <div class=\"card-content\">\r\n                                            <div class=\"example-container mat-table\">\r\n                                                    <div>\r\n                                                            <button class=\"btn btn-md btn-success\" (click)=\"opendialog()\">Add Job</button>\r\n                                                    </div>\r\n                                                    <mat-table [dataSource]=\"datasource\" matSort>\r\n                                                        <ng-container matColumnDef=\"title\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.title}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"description\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.description}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"term\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Term </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.term.name}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"status\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\"> {{job.status}} </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <ng-container matColumnDef=\"action\">\r\n                                                                <mat-header-cell *matHeaderCellDef mat-sort-header> Actions </mat-header-cell>\r\n                                                                <mat-cell *matCellDef=\"let job\">\r\n                                                                        <span>\r\n                                                                                <button style=\"background: transparent; border:none; color: #00BCD4;\" (click)=\"viewjob(job)\">\r\n                                                                                        <i class=\"material-icons\">visibility</i>\r\n                                                                                </button>\r\n                                                                                <button style=\"background: transparent; border:none; color:#FF9800;\" (click)=\"editjob(job)\">\r\n                                                                                        <i class=\"material-icons\">mode_edit</i>\r\n                                                                                </button>\r\n                                                                                <button style=\"background: transparent; border:none; color:#C62828;\" (click)=\"deletejob(job)\">\r\n                                                                                        <i class=\"material-icons\">delete</i>\r\n                                                                                </button>\r\n                                                                        </span>\r\n                                                                </mat-cell>\r\n                                                        </ng-container>\r\n                                                        <mat-header-row *matHeaderRowDef=\"displayedColumns\" class=\"header-style\"></mat-header-row>\r\n                                                        <mat-row *matRowDef=\"let row; columns: displayedColumns\" class=\"row-style\"></mat-row>\r\n                                                </mat-table>\r\n                                                <mat-paginator [pageSize]=\"10\">\r\n                                                </mat-paginator>\r\n                                                   \r\n                                            </div>\r\n                                    </div>\r\n                            </div>\r\n                    </div>\r\n            </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1298,7 +1517,9 @@ module.exports = "<div class=\"main-content\">\r\n    <ngx-loading [show]=\"load
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__addjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/addjobdialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__viewjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/viewjobdialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__editjobdialog_component__ = __webpack_require__("../../../../../src/app/faculty/job/editjobdialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1308,6 +1529,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -1337,11 +1560,93 @@ var FacultyJobs = /** @class */ (function () {
         filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
         this.datasource.filter = filterValue;
     };
+    FacultyJobs.prototype.viewjob = function (data) {
+        var disposable = this.dialogService.addDialog(__WEBPACK_IMPORTED_MODULE_5__viewjobdialog_component__["a" /* ViewJobDialogContent */], {
+            _id: data._id,
+            title: data.title,
+            description: data.description,
+            requirements: data.requirements,
+            deadline: data.deadline,
+            startdate: data.startdate,
+            enddate: data.enddate,
+            wage: data.wage,
+            hrsperweek: data.hrsperweek,
+            resources: data.resources,
+            funding: data.funding,
+            positionfor: data.positionfor,
+            facultycomment: data.facultycomment,
+            admincomment: data.admincomment,
+            status: data.status,
+            term: data.term,
+            user: data.user,
+            createdat: new Date(Date.now()),
+            updatedat: new Date(Date.now())
+        })
+            .subscribe(function (isConfirmed) {
+            //We get dialog result
+            if (isConfirmed) {
+            }
+            else {
+                //alert('declined');
+            }
+        });
+    };
+    FacultyJobs.prototype.editjob = function (data) {
+        var _this = this;
+        var disposable = this.dialogService.addDialog(__WEBPACK_IMPORTED_MODULE_6__editjobdialog_component__["a" /* EditJobDialogContent */], {
+            _id: data._id,
+            title: data.title,
+            description: data.description,
+            requirements: data.requirements,
+            deadline: data.deadline,
+            startdate: data.startdate,
+            enddate: data.enddate,
+            wage: data.wage,
+            hrsperweek: data.hrsperweek,
+            resources: data.resources,
+            funding: data.funding,
+            positionfor: data.positionfor,
+            facultycomment: data.facultycomment,
+            admincomment: data.admincomment,
+            status: data.status,
+            term: data.term,
+            user: data.user,
+            createdat: new Date(Date.now()),
+            updatedat: new Date(Date.now())
+        })
+            .subscribe(function (isConfirmed) {
+            //We get dialog result
+            if (isConfirmed) {
+                _this.loading = true;
+                _this.userService.getFacultyJobs().subscribe(function (res) {
+                    _this.datasource.data = res;
+                    _this.loading = false;
+                }, function (err) {
+                    _this.authService.reset();
+                    _this.loading = false;
+                });
+            }
+            else {
+                //alert('declined');
+            }
+        });
+    };
+    FacultyJobs.prototype.deletejob = function (data) {
+    };
     FacultyJobs.prototype.opendialog = function () {
+        var _this = this;
         var disposable = this.dialogService.addDialog(__WEBPACK_IMPORTED_MODULE_4__addjobdialog_component__["a" /* AddJobDialogContent */], {})
             .subscribe(function (isConfirmed) {
             //We get dialog result
             if (isConfirmed) {
+                _this.loading = true;
+                _this.userService.getFacultyJobs().subscribe(function (res) {
+                    _this.datasource.data = res;
+                    _this.loading = false;
+                }, function (err) {
+                    _this.authService.reset();
+                    _this.loading = false;
+                });
             }
             else {
             }
@@ -1369,10 +1674,127 @@ var FacultyJobs = /** @class */ (function () {
                 'class': 'new-mat-paginator'
             }
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__["DialogService"], __WEBPACK_IMPORTED_MODULE_5__servcies_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_2_ng2_bootstrap_modal__["DialogService"], __WEBPACK_IMPORTED_MODULE_7__servcies_auth_service__["a" /* AuthService */]])
     ], FacultyJobs);
     return FacultyJobs;
 }());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/viewjobdialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".modal-new .modal-content {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    height: 90%;\r\n    overflow-y: scroll;\r\n    -webkit-transform: translate(-50%, -50%) !important;\r\n            transform: translate(-50%, -50%) !important;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/viewjobdialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-content\">\r\n    <div class=\"modal-body\">\r\n        <ngx-loading [show]=\"loading\" [config]=\"{ backdropBorderRadius: '14px', primaryColor:'#C52828' }\"></ngx-loading>\r\n        <div class=\"container\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-12\">\r\n                    <div class=\"card card-nav-tabs\">\r\n                        <div class=\"card-header\" data-background-color=\"orange\">\r\n                            <h4 class=\"title\">Add Job</h4>\r\n                        </div>\r\n                        <div class=\"card-content\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    <form name=\"jobForm\" id=\"jobForm\" #jobForm=\"ngForm\">\r\n                                        <div class=\"form-group\">\r\n                                            <label>Title</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"title\" [(ngModel)]=\"title\" #jobTitle=\"ngModel\" readonly disabled/>\r\n                                            <br>\r\n                                            <label>Description</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"description\" name=\"description\" #jobDescription=\"ngModel\" readonly disabled></textarea>\r\n                                            <br>\r\n                                            <label>Requirements</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"requirements\" name=\"requirements\" #jobRequirements=\"ngModel\" readonly disabled></textarea>\r\n                                            <br>\r\n                                            <label>Funding</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Self</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Self\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" readonly disabled/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Department</label>\r\n                                                        <input type=\"radio\" name=\"funding\" value=\"Department\" id=\"funding\" [(ngModel)]=\"funding\" #jobFunding=\"ngModel\" readonly disabled/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Position for</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Undergraduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Undergraduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" readonly disabled/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Graduate</label>\r\n                                                        <input type=\"radio\" name=\"positionfor\" value=\"Graduate\" id=\"positionfor\" [(ngModel)]=\"positionfor\" #jobPositionFor=\"ngModel\" readonly disabled/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Wage</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"wage\" [(ngModel)]=\"wage\" #jobWage=\"ngModel\" (ngModelChange)=\"minmaxValidation()\" readonly disabled/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Hours per week</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"hrsperweek\" [(ngModel)]=\"hrsperweek\" #jobHrsPerWeek=\"ngModel\" readonly disabled/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <label>Resources</label>\r\n                                                        <input type=\"number\" class=\"form-control\" name=\"resources\" [(ngModel)]=\"resources\" #jobResources=\"ngModel\"  readonly disabled/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Term</label>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-2\">Name</div>\r\n                                                    <div class=\"col-md-2\">Status</div>\r\n                                                    <div class=\"col-md-2\">From</div>\r\n                                                    <div class=\"col-md-2\">To</div>\r\n                                                    <div class=\"col-md-2\">Action</div>\r\n                                                </div>\r\n                                                <div class=\"row\" *ngFor=\"let vterm of validTerms\">\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.name}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.status}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.from|date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\" style=\"color: #AAAAAA;\">{{vterm.to | date: 'MM/dd/yyyy'}}</div>\r\n                                                    <div class=\"col-md-2\">\r\n                                                        <input type=\"radio\" value=\"{{vterm._id}}\" name=\"term\" [(ngModel)]=\"selectedterm\" disabled/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <div class=\"container-fluid\">\r\n                                                <div class=\"row\">\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Application deadline</label>\r\n                                                        <input type=\"text\" class=\"form-control\" value=\"{{deadline | date: 'MM/dd/yyyy'}}\" readonly disabled />\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>Start date</label>\r\n                                                        <input type=\"text\" class=\"form-control\" value=\"{{startdate | date: 'MM/dd/yyyy'}}\" readonly disabled/>\r\n                                                    </div>\r\n                                                    <div class=\"col-md-3\">\r\n                                                        <label>End date</label>\r\n                                                        <input type=\"text\" class=\"form-control\" value=\"{{enddate | date: 'MM/dd/yyyy'}}\" readonly disabled/>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </div>\r\n                                            <br>\r\n                                            <label>Status</label>\r\n                                            <input type=\"text\" class=\"form-control\" name=\"status\" [(ngModel)]=\"status\" #jobStatus=\"ngModel\"readonly disabled/>\r\n                                            <br>\r\n                                            <label>Faculty Comment</label>\r\n                                            <textarea class=\"form-control\" [(ngModel)]=\"facultycomment\" name=\"facultycomment\" readonly disabled></textarea>\r\n                                            <br>\r\n                                            <label>Administrator Comment</label>\r\n                                            <textarea type=\"text\" class=\"form-control\"  #jobAdminComment=\"ngModel\" name=\"admincomment\" [(ngModel)]=\"admincomment\" readonly disabled></textarea>\r\n                                        </div>\r\n                                    </form>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <div>\r\n            <button type=\"button\" class=\"btn btn-default\" (click)=\"close()\">Cancel</button>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/faculty/job/viewjobdialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViewJobDialogContent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__ = __webpack_require__("../../../../ng2-bootstrap-modal/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__ = __webpack_require__("../../../../date-fns/locale/fr/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__ = __webpack_require__("../../../../../src/app/servcies/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__servcies_auth_service__ = __webpack_require__("../../../../../src/app/servcies/auth.service.ts");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ViewJobDialogContent = /** @class */ (function (_super) {
+    __extends(ViewJobDialogContent, _super);
+    function ViewJobDialogContent(dialogService, userService, authService) {
+        var _this = _super.call(this, dialogService) || this;
+        _this.userService = userService;
+        _this.authService = authService;
+        _this.loading = false;
+        _this.options = {
+            minYear: 1970,
+            maxYear: 2030,
+            displayFormat: 'MMM D[,] YYYY',
+            barTitleFormat: 'MMMM YYYY',
+            firstCalendarDay: 0,
+            locale: __WEBPACK_IMPORTED_MODULE_2_date_fns_locale_fr__,
+            minDate: new Date(Date.now()),
+            maxDate: new Date(Date.now()) // Maximal selectable date
+        };
+        _this.validTerms = [];
+        return _this;
+    }
+    ViewJobDialogContent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loading = true;
+        this.selectedterm = this.term._id;
+        this.userService.getValidTerms().subscribe(function (val) {
+            _this.loading = false;
+            _this.validTerms = val;
+        }, function (err) {
+            _this.loading = false;
+            _this.result = true;
+            _this.close();
+            _this.authService.reset();
+        });
+        this.authService.getUserDetails().subscribe(function (val) {
+            _this.user = val;
+        });
+    };
+    ViewJobDialogContent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'job-data',
+            template: __webpack_require__("../../../../../src/app/faculty/job/viewjobdialog.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/faculty/job/viewjobdialog.component.css")],
+            encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewEncapsulation"].None,
+            host: {
+                'class': 'modal-new'
+            }
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogService"], __WEBPACK_IMPORTED_MODULE_3__servcies_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__servcies_auth_service__["a" /* AuthService */]])
+    ], ViewJobDialogContent);
+    return ViewJobDialogContent;
+}(__WEBPACK_IMPORTED_MODULE_1_ng2_bootstrap_modal__["DialogComponent"]));
 
 
 
@@ -1791,6 +2213,9 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getFacultyJobs = function () {
         return this.http.get('/getFacultyJobs');
     };
+    UserService.prototype.updateJob = function (data) {
+        return this.http.post('/updateJob', data);
+    };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
@@ -2195,14 +2620,11 @@ var EditTermDialog = /** @class */ (function (_super) {
         if (Date.parse(this.from.toDateString()) < Date.parse(current.toDateString())) {
             this.error.isError = true;
             this.error.errorMessage = 'From date cannot be less than current date';
-            console.log(current.toDateString());
-            console.log(this.from.toDateString());
         }
         else {
             if (Date.parse(this.to.toDateString()) < Date.parse(this.from.toDateString())) {
                 this.error.errorMessage = '"To" date must be greater than "From" date';
                 this.error.isError = true;
-                console.log('here');
             }
             else {
                 this.error.errorMessage = '';
@@ -2325,7 +2747,6 @@ var ManageTerms = /** @class */ (function () {
                 }, function (err) {
                     _this.loading = false;
                     if (err.error === 'Unauthorized') {
-                        console.log(err.error);
                     }
                 });
             }
@@ -2347,7 +2768,6 @@ var ManageTerms = /** @class */ (function () {
                 }, function (err) {
                     _this.loading = false;
                     if (err.error === 'Unauthorized') {
-                        console.log(err.error);
                     }
                 });
             }
@@ -2380,7 +2800,6 @@ var ManageTerms = /** @class */ (function () {
                 }, function (err) {
                     _this.loading = false;
                     if (err.error === 'Unauthorized') {
-                        console.log(err.error);
                     }
                 });
             }

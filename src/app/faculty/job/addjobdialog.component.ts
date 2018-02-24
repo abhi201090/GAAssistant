@@ -38,7 +38,7 @@ export class AddJobDialogContent extends DialogComponent<Job, boolean> implement
   facultycomment: string;
   admincomment: string;
   status: string;
-  term: string;
+  term: Term;
   user: UserInfo;
   createdat: Date;
   updatedat: Date;
@@ -53,8 +53,7 @@ export class AddJobDialogContent extends DialogComponent<Job, boolean> implement
     maxDate: new Date(Date.now())  // Maximal selectable date
   };
   validTerms = [];
-  selectedTerm: Term;
-  displayedColumns = ['name', 'status', 'from', 'to', 'action'];
+  selectedterm: string;
   dateerrors: any = { isError: true, errorMessages: [] };
   minmaxerrors: any = { isError: false, errorMessages: [] };
   termerror: any = { isError: true, errorMessage: 'Term is required' };
@@ -67,8 +66,8 @@ export class AddJobDialogContent extends DialogComponent<Job, boolean> implement
   }
 
   onTermSelect(data) {
-    this.selectedTerm = data;
-    this.term = data._id;
+    this.selectedterm = data._id;
+    this.term = data;
     this.termerror.isError = false;
     this.termerror.errorMessage = '';
     this.compareDate();
@@ -93,8 +92,8 @@ export class AddJobDialogContent extends DialogComponent<Job, boolean> implement
 
   compareDate() {
     let current = new Date(Date.now());
-    let termStart = new Date(this.selectedTerm.from);
-    let termEnd = new Date(this.selectedTerm.to);
+    let termStart = new Date(this.term.from);
+    let termEnd = new Date(this.term.to);
     this.dateerrors.isError = false;
     this.dateerrors.errorMessages = [];
     if (this.term) {
@@ -103,7 +102,6 @@ export class AddJobDialogContent extends DialogComponent<Job, boolean> implement
         this.dateerrors.errorMessages.push('Deadline must be greater than current date');
       }
       if (Date.parse(this.deadline.toDateString()) >= Date.parse(this.startdate.toDateString())) {
-        console.log('something');
         this.dateerrors.isError = true;
         this.dateerrors.errorMessages.push('Deadline must be less than start date');
       }
@@ -152,7 +150,7 @@ export class AddJobDialogContent extends DialogComponent<Job, boolean> implement
       facultycomment: this.facultycomment,
       admincomment: this.admincomment,
       status: this.status,
-      term: this.selectedTerm,
+      term: this.term,
       user: this.user,
       createdat: new Date(Date.now()),
       updatedat: new Date(Date.now())
